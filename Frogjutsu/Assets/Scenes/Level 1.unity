@@ -156,6 +156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b08412d91e6f414c9e68eef3fe8663d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 0
+  moveSpeed: 7
+  jumpForce: 14
 --- !u!95 &91711082
 Animator:
   serializedVersion: 5
@@ -469,7 +474,7 @@ GameObject:
   - component: {fileID: 1595370171}
   - component: {fileID: 1595370170}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
