@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 545006345}
   - component: {fileID: 545006346}
   m_Layer: 0
-  m_Name: Red_NInja_Warrior
+  m_Name: Warrior Ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1406,7 +1406,7 @@ GameObject:
   - component: {fileID: 1533711089}
   - component: {fileID: 1533711088}
   m_Layer: 0
-  m_Name: Purple_Ninja_Warrior
+  m_Name: Mage Ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1439,7 +1439,7 @@ Animator:
   m_GameObject: {fileID: 1533711087}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5c057ef6909a704abe0602c559de401, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4af762112b533f24489e288bfe9a33cd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1514,7 +1514,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1568,7 +1568,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
