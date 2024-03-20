@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1573c11c0972f9f4c8604b0213dd1389
+guid: 5f31a5fd58a2f61429306ff2a725da87
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mage Ninja Idle_0
+      name: Ranger Ninja Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c25dfdf3fd387f740a38707ba7f57748
-      internalID: 735315073
+      spriteID: 9e372fb7334be02408915512f7a27424
+      internalID: -412072279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_1
+      name: Ranger Ninja Idle_1
       rect:
         serializedVersion: 2
         x: 32
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00fa241ab25e3e64bb69295c45515866
-      internalID: -2088044464
+      spriteID: d7fa96a550074bf40bbb4a9be052b8b1
+      internalID: -631075102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_2
+      name: Ranger Ninja Idle_2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 999d22094a685234da7862ccfa971a18
-      internalID: -1042806801
+      spriteID: 36ce1b73821e37042be92152b337aa76
+      internalID: -927318490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_3
+      name: Ranger Ninja Idle_3
       rect:
         serializedVersion: 2
         x: 96
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd190e9ac06c7984093620a8b46eca71
-      internalID: 950825830
+      spriteID: 249c25e42695cf24a856d33972c16d7e
+      internalID: -416166899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_4
+      name: Ranger Ninja Idle_4
       rect:
         serializedVersion: 2
         x: 128
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad0c675ae5ac21479c6be8dc197775a
-      internalID: 335201024
+      spriteID: cec3736160064eb4ea5f36412857a101
+      internalID: -2022362642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_5
+      name: Ranger Ninja Idle_5
       rect:
         serializedVersion: 2
         x: 160
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60fb562eb7a180748b9ed1c1cedb6c2f
-      internalID: -1848552295
+      spriteID: 834d571239eea4146afbdfa1d3d2ffae
+      internalID: -764212888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_6
+      name: Ranger Ninja Idle_6
       rect:
         serializedVersion: 2
         x: 192
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 744dd5028eaab464592d7dade5df7038
-      internalID: -121103100
+      spriteID: 209e95af509748f448b38bf37036a8b4
+      internalID: -983401684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_7
+      name: Ranger Ninja Idle_7
       rect:
         serializedVersion: 2
         x: 224
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4188c57a4a623a429ebc7ac4dc8ab34
-      internalID: 1849372335
+      spriteID: 3277209b6a50acd4c9373047f87a989d
+      internalID: 571560370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_8
+      name: Ranger Ninja Idle_8
       rect:
         serializedVersion: 2
         x: 256
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97c91bfa510641948aa29c2c244e56e3
-      internalID: 1896116538
+      spriteID: 2ac37f4a2fdbf5d4ba8f5974f311b364
+      internalID: 705022488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_9
+      name: Ranger Ninja Idle_9
       rect:
         serializedVersion: 2
         x: 288
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4722ec263328454f89a82ff8b77d0e2
-      internalID: -1739168079
+      spriteID: 59ed341326538464ea932141558e88a2
+      internalID: 1699959152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_10
+      name: Ranger Ninja Idle_10
       rect:
         serializedVersion: 2
         x: 320
@@ -321,8 +321,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0d14c4560d6ac94c813a453e183cf97
-      internalID: -1349946441
+      spriteID: bd244620e295fce47b3ad24c7d673da5
+      internalID: 1451687061
       vertices: []
       indices: 
       edges: []
@@ -338,17 +338,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mage Ninja Idle_0: 735315073
-      Mage Ninja Idle_1: -2088044464
-      Mage Ninja Idle_10: -1349946441
-      Mage Ninja Idle_2: -1042806801
-      Mage Ninja Idle_3: 950825830
-      Mage Ninja Idle_4: 335201024
-      Mage Ninja Idle_5: -1848552295
-      Mage Ninja Idle_6: -121103100
-      Mage Ninja Idle_7: 1849372335
-      Mage Ninja Idle_8: 1896116538
-      Mage Ninja Idle_9: -1739168079
+      Ranger Ninja Idle_0: -412072279
+      Ranger Ninja Idle_1: -631075102
+      Ranger Ninja Idle_10: 1451687061
+      Ranger Ninja Idle_2: -927318490
+      Ranger Ninja Idle_3: -416166899
+      Ranger Ninja Idle_4: -2022362642
+      Ranger Ninja Idle_5: -764212888
+      Ranger Ninja Idle_6: -983401684
+      Ranger Ninja Idle_7: 571560370
+      Ranger Ninja Idle_8: 705022488
+      Ranger Ninja Idle_9: 1699959152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

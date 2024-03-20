@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1573c11c0972f9f4c8604b0213dd1389
+guid: e9840c624e981ce4abf2afd056a9b91f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mage Ninja Idle_0
+      name: Assassin Ninja Run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c25dfdf3fd387f740a38707ba7f57748
-      internalID: 735315073
+      spriteID: 7a7a4c2047c24794a85b86f38e8a394c
+      internalID: 632446173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_1
+      name: Assassin Ninja Run_1
       rect:
         serializedVersion: 2
         x: 32
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00fa241ab25e3e64bb69295c45515866
-      internalID: -2088044464
+      spriteID: c2cb213b16691244db63b490e1709d2f
+      internalID: -983444566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_2
+      name: Assassin Ninja Run_2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 999d22094a685234da7862ccfa971a18
-      internalID: -1042806801
+      spriteID: ee92d6a165a6da04d9e9359bea513e16
+      internalID: 1593849367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_3
+      name: Assassin Ninja Run_3
       rect:
         serializedVersion: 2
         x: 96
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd190e9ac06c7984093620a8b46eca71
-      internalID: 950825830
+      spriteID: 33d114667f720a84f916645db5761d78
+      internalID: -1928857304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_4
+      name: Assassin Ninja Run_4
       rect:
         serializedVersion: 2
         x: 128
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad0c675ae5ac21479c6be8dc197775a
-      internalID: 335201024
+      spriteID: a7c409c16621ca44e943e3ae30b27900
+      internalID: 553228305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_5
+      name: Assassin Ninja Run_5
       rect:
         serializedVersion: 2
         x: 160
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60fb562eb7a180748b9ed1c1cedb6c2f
-      internalID: -1848552295
+      spriteID: d2a1ea6e3d11ed44a92c01e6b803cf07
+      internalID: -457643357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_6
+      name: Assassin Ninja Run_6
       rect:
         serializedVersion: 2
         x: 192
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 744dd5028eaab464592d7dade5df7038
-      internalID: -121103100
+      spriteID: b8c34a20e81ddde4c83f929fc351f881
+      internalID: 815074481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_7
+      name: Assassin Ninja Run_7
       rect:
         serializedVersion: 2
         x: 224
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4188c57a4a623a429ebc7ac4dc8ab34
-      internalID: 1849372335
+      spriteID: a6b97401a9ab31040b2318f71a8dd0dd
+      internalID: -291704407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_8
+      name: Assassin Ninja Run_8
       rect:
         serializedVersion: 2
         x: 256
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97c91bfa510641948aa29c2c244e56e3
-      internalID: 1896116538
+      spriteID: f795c643a95b2a4498fa6ca672da6fbc
+      internalID: -1527122293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_9
+      name: Assassin Ninja Run_9
       rect:
         serializedVersion: 2
         x: 288
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4722ec263328454f89a82ff8b77d0e2
-      internalID: -1739168079
+      spriteID: c470d4ce46e2c9e4386fb8e924c71435
+      internalID: -841959203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mage Ninja Idle_10
+      name: Assassin Ninja Run_10
       rect:
         serializedVersion: 2
         x: 320
@@ -321,8 +321,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0d14c4560d6ac94c813a453e183cf97
-      internalID: -1349946441
+      spriteID: 20e5dcba25dfedf40acefca335a5dd6b
+      internalID: -1993333445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assassin Ninja Run_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c6e30880e77494996ff33049a46c06
+      internalID: -1843266880
       vertices: []
       indices: 
       edges: []
@@ -338,17 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mage Ninja Idle_0: 735315073
-      Mage Ninja Idle_1: -2088044464
-      Mage Ninja Idle_10: -1349946441
-      Mage Ninja Idle_2: -1042806801
-      Mage Ninja Idle_3: 950825830
-      Mage Ninja Idle_4: 335201024
-      Mage Ninja Idle_5: -1848552295
-      Mage Ninja Idle_6: -121103100
-      Mage Ninja Idle_7: 1849372335
-      Mage Ninja Idle_8: 1896116538
-      Mage Ninja Idle_9: -1739168079
+      Assassin Ninja Run_0: 632446173
+      Assassin Ninja Run_1: -983444566
+      Assassin Ninja Run_10: -1993333445
+      Assassin Ninja Run_11: -1843266880
+      Assassin Ninja Run_2: 1593849367
+      Assassin Ninja Run_3: -1928857304
+      Assassin Ninja Run_4: 553228305
+      Assassin Ninja Run_5: -457643357
+      Assassin Ninja Run_6: 815074481
+      Assassin Ninja Run_7: -291704407
+      Assassin Ninja Run_8: -1527122293
+      Assassin Ninja Run_9: -841959203
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
