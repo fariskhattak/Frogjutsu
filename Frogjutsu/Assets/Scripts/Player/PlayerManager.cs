@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.GetInt("SelectedCharacter", 0);
+        characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
         GameObject player = Instantiate(playerPrefabs[characterIndex], startPosition, Quaternion.identity);
         cameraController.player = player.transform;
     }
