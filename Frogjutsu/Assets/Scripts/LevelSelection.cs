@@ -9,11 +9,11 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private bool unlocked; //default value is false
     public Image unlockImage;
 
-    private void Update(){ //TODO move this method later
+    public void Update(){ //TODO move this method later
         UpdateLevelImage();
     }
     
-    private void UpdateLevelImage(){
+    public void UpdateLevelImage(){
         if (!unlocked){ //MARKER if unlock is false means this level is locked
             unlockImage.gameObject.SetActive(true);
         }
@@ -22,7 +22,7 @@ public class LevelSelection : MonoBehaviour
         }
     }
 
-    private void PressSelection(string _LevelName) { //when press level, move to the corresponding scene
+    public void PressSelection(string _LevelName) { //when press level, move to the corresponding scene
         if(unlocked) {
             SceneManager.LoadScene(_LevelName)
         }
