@@ -7,11 +7,6 @@ public class Warrior : Player
     public float additionalJumpForce = 5f;
     public override void Jump()
     {
-        float originalJumpForce = jumpForce;
-        jumpForce += additionalJumpForce;
-
-        base.Jump();
-
-        jumpForce = originalJumpForce;
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce + additionalJumpForce);
     }
 }

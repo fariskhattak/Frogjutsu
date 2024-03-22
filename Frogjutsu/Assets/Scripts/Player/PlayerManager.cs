@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
     public GameObject[] playerPrefabs;
     public int characterIndex;
 
+    public HealthBar healthBar;
+
     [SerializeField] private CameraController cameraController;
 
     private void Awake()
