@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3684404349255968567}
   - component: {fileID: 4339489127858861449}
   - component: {fileID: 8807949473090549966}
+  - component: {fileID: -8869682282557621139}
   m_Layer: 0
   m_Name: Mage Ninja
   m_TagString: Untagged
@@ -196,5 +197,15 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 128
-  moveSpeed: 7
-  jumpForce: 14
+--- !u!114 &-8869682282557621139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984847905057781565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a9c5a878e49914f9878b18ce63ebbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
