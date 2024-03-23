@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7846739303566986157}
   - component: {fileID: 2983198313075785059}
   - component: {fileID: 2662697460687573931}
+  - component: {fileID: 4720661944309039406}
   m_Layer: 0
   m_Name: Warrior Ninja
   m_TagString: Untagged
@@ -196,5 +197,20 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &4720661944309039406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2857067279170008310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b1d3406cd6a69488ec82d9d226c33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
   moveSpeed: 7
+  mana: 50
   jumpForce: 14
+  rb: {fileID: 0}

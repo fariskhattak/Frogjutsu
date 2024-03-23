@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9068398767801674433}
   - component: {fileID: 4081229044827409172}
   - component: {fileID: 5871294459396002168}
+  - component: {fileID: -1993399133801182866}
   m_Layer: 0
   m_Name: Assassin Ninja
   m_TagString: Untagged
@@ -196,5 +197,15 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 128
-  moveSpeed: 7
-  jumpForce: 14
+--- !u!114 &-1993399133801182866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636379486052914751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b2f31f74577a84597161fd86ac181f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
