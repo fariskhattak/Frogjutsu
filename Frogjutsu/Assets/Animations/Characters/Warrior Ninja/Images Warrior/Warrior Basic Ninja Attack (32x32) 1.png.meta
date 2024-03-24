@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5dec4b2d599b7f447ae27dee6b60aac0
+guid: 93c385f28ea6348449c43dde5b5dfd6f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,64 +97,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Warrior Ninja Attack (32x32) (2)_0
+      name: Warrior Basic Ninja Attack (32x32) 1_0
       rect:
         serializedVersion: 2
         x: 27
         y: 10
-        width: 38
+        width: 37
         height: 26
       alignment: 9
-      pivot: {x: 0.31438294, y: 0.61439794}
+      pivot: {x: 0.3235287, y: 0.6161193}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7666fdc908cbee7469822dd970ee2f40
-      internalID: -1584351406
+      spriteID: 0f9f29a37ae24df48896aa9f51e71fab
+      internalID: 1425299154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior Ninja Attack (32x32) (2)_1
+      name: Warrior Basic Ninja Attack (32x32) 1_1
       rect:
         serializedVersion: 2
         x: 97
         y: 10
         width: 32
-        height: 30
+        height: 29
       alignment: 9
-      pivot: {x: 0.5304637, y: 0.5325229}
+      pivot: {x: 0.5164151, y: 0.5162819}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fb5b8c70a6cceb46bb3ce8db5d1aff6
-      internalID: 2143526616
+      spriteID: 6c128701284edb6439e7233a6d600ed2
+      internalID: 1982968341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior Ninja Attack (32x32) (2)_2
+      name: Warrior Basic Ninja Attack (32x32) 1_2
       rect:
         serializedVersion: 2
         x: 187
-        y: 2
-        width: 46
+        y: 1
+        width: 45
         height: 40
       alignment: 9
-      pivot: {x: 0.25778663, y: 0.5994516}
+      pivot: {x: 0.2532898, y: 0.62160045}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3d3487b660692f4d90375d2862cea72
-      internalID: 1674286875
+      spriteID: 6ecbb370238ef994c81fb2e3c4d75156
+      internalID: -469634644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warrior Basic Ninja Attack (32x32) 1_3
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1
+        width: 36
+        height: 35
+      alignment: 9
+      pivot: {x: 0.3177363, y: 0.7138132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e66574986431d43ba5a960e2aedabe
+      internalID: -268091885
       vertices: []
       indices: 
       edges: []
@@ -170,9 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Warrior Ninja Attack (32x32) (2)_0: -1584351406
-      Warrior Ninja Attack (32x32) (2)_1: 2143526616
-      Warrior Ninja Attack (32x32) (2)_2: 1674286875
+      Warrior Basic Ninja Attack (32x32) 1_0: 1425299154
+      Warrior Basic Ninja Attack (32x32) 1_1: 1982968341
+      Warrior Basic Ninja Attack (32x32) 1_2: -469634644
+      Warrior Basic Ninja Attack (32x32) 1_3: -268091885
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
