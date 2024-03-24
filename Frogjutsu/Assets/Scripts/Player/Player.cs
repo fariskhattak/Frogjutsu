@@ -11,33 +11,79 @@ public class Player : MonoBehaviour
     protected float moveSpeed = 7f;
     protected int mana = 50;
     protected float jumpForce = 14f;
+    protected float knockbackForce = 15f;
+
+    protected bool isAlive;
+
 
     protected Rigidbody2D rb;
+    protected Animator anim;
+    protected SpriteRenderer sprite;
 
-    void Start()
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+
+        startPosition = transform.position;
+        startRotation = transform.rotation;
+        isAlive = true;
+
         currentHealth = maxHealth;
         InitHealthBar();
 
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        if (isAlive)
+        {
+
+            Debug.Log("Player has died");
+            anim.SetTrigger("death");
+            isAlive = false;
+            rb.velocity = Vector2.zero;
+            GetComponent<PlayerMovement>().enabled = false;
+        }
+
+    }
+
+    public void ResetPlayer()
+    {
+        Debug.Log("Resetting Player");
+        anim.SetTrigger("respawn"); // Assuming you have a reset animation or logic
+        transform.position = startPosition;
+        transform.rotation = startRotation;
+        currentHealth = maxHealth;
+        healthBar.SetHealth(maxHealth);
+        isAlive = true;
+        GetComponent<PlayerMovement>().enabled = true;
     }
 
     public virtual void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        Debug.Log(jumpForce);
+        // Debug.Log(jumpForce);
     }
 
     public virtual void Run(float dirX)
     {
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-        Debug.Log(moveSpeed);
+        // Debug.Log(moveSpeed);
     }
 
     public float GetMoveSpeed()
@@ -45,7 +91,31 @@ public class Player : MonoBehaviour
         return moveSpeed;
     }
 
-    void InitHealthBar()
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            anim.SetTrigger("hit");
+            if (rb != null)
+            {
+                // Calculate horizontal knockback direction but keep it at ground level
+                Vector2 horizontalKnockbackDirection = (transform.position - collision.transform.position).normalized;
+                horizontalKnockbackDirection.y = 0; // Keep the force horizontal
+
+                // Apply an initial upward force
+                Vector2 upwardForce = Vector2.up * knockbackForce; // Adjust the multiplier as needed
+                rb.AddForce(upwardForce, ForceMode2D.Impulse);
+
+                // Apply horizontal force
+                rb.AddForce(-horizontalKnockbackDirection * knockbackForce, ForceMode2D.Impulse);
+                Debug.Log("Knockback Strength:" + knockbackForce);
+                Debug.Log("Horizontal knockback Direction:" + horizontalKnockbackDirection);
+                Debug.Log("Horizontal Knockback Strength * Direction:" + horizontalKnockbackDirection * knockbackForce);
+            }
+        }
+    }
+
+    private void InitHealthBar()
     {
         GameObject healthBarObject = GameObject.FindGameObjectWithTag("HealthBar");
         if (healthBarObject != null)
