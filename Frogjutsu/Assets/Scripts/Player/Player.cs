@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     protected int mana = 50;
     protected float jumpForce = 14f;
     protected float knockbackForce = 15f;
+    public float damage = 10;
 
     protected bool isAlive;
 
