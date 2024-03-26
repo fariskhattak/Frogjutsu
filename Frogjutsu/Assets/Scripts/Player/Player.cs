@@ -20,8 +20,6 @@ public class Player : MonoBehaviour
     protected Rigidbody2D rb;
     protected Animator anim;
     protected SpriteRenderer sprite;
-    public GameObject attackPoint;
-    public float attackRadius;
     public LayerMask enemies;
     private Vector3 startPosition;
     private Quaternion startRotation;
@@ -41,6 +39,15 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         InitHealthBar();
 
+    }
+
+    public virtual void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("Player used attack button");
+            StartAttack();
+        }
     }
 
     public void TakeDamage(int damage)
@@ -105,31 +112,6 @@ public class Player : MonoBehaviour
 
     }
 
-    // Used for melee attacks
-    public virtual void Attack()
-    {
-        if (attackPoint != null)
-        {
-            Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRadius, enemies);
-
-            foreach (Collider2D enemyGameObject in enemy)
-            {
-                Debug.Log("Hit Enemy");
-                enemyGameObject.GetComponent<EnemyHealth>().health -= damage;
-            }
-        }
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (attackPoint != null)
-        {
-            Gizmos.DrawWireSphere(attackPoint.transform.position, attackRadius);
-        }
-
-    }
-
     public float GetMoveSpeed()
     {
         return moveSpeed;
@@ -152,9 +134,9 @@ public class Player : MonoBehaviour
 
                 // Apply horizontal force
                 rb.AddForce(-horizontalKnockbackDirection * knockbackForce, ForceMode2D.Impulse);
-                Debug.Log("Knockback Strength:" + knockbackForce);
-                Debug.Log("Horizontal knockback Direction:" + horizontalKnockbackDirection);
-                Debug.Log("Horizontal Knockback Strength * Direction:" + horizontalKnockbackDirection * knockbackForce);
+                // Debug.Log("Knockback Strength:" + knockbackForce);
+                // Debug.Log("Horizontal knockback Direction:" + horizontalKnockbackDirection);
+                // Debug.Log("Horizontal Knockback Strength * Direction:" + horizontalKnockbackDirection * knockbackForce);
             }
         }
     }

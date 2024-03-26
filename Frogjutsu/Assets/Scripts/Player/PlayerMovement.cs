@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
     [SerializeField] private LayerMask jumpableGround;
-    private float dirX = 0f;
+    public float dirX = 0f;
 
     private enum MovementState { idle, running, jumping, falling }
     // Start is called before the first frame update
@@ -44,11 +44,6 @@ public class PlayerMovement : MonoBehaviour
             player.Jump();
         }
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            player.StartAttack();
-        }
-
         UpdateAnimationState();
 
     }
@@ -60,13 +55,13 @@ public class PlayerMovement : MonoBehaviour
         if (dirX > 0f)
         {
             state = MovementState.running;
-            sprite.flipX = false;
+            rb.transform.localScale = Vector3.one;
         }
         // Running left
         else if (dirX < 0f)
         {
             state = MovementState.running;
-            sprite.flipX = true;
+            rb.transform.localScale = new Vector3(-1, 1, 1);
         }
         // Stopped
         else
