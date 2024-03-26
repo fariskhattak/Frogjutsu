@@ -101,17 +101,25 @@ public class PlayerMovement : MonoBehaviour
 
     public void Attack()
     {
-        Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemies);
-
-        foreach (Collider2D enemyGameObject in enemy)
+        if (attackPoint != null)
         {
-            Debug.Log("Hit Enemy");
-            enemyGameObject.GetComponent<EnemyHealth>().health -= player.damage;
+            Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemies);
+
+            foreach (Collider2D enemyGameObject in enemy)
+            {
+                Debug.Log("Hit Enemy");
+                enemyGameObject.GetComponent<EnemyHealth>().health -= player.damage;
+            }
         }
+
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
+        if (attackPoint != null)
+        {
+            Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
+        }
+
     }
 }

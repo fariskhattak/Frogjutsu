@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  currentHealth: 0
 --- !u!1001 &250277773
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -194,6 +194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b08412d91e6f414c9e68eef3fe8663d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPoint: {fileID: 0}
+  radius: 0
+  enemies:
+    serializedVersion: 2
+    m_Bits: 64
   jumpableGround:
     serializedVersion: 2
     m_Bits: 128
@@ -209,3 +214,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b2f31f74577a84597161fd86ac181f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  additionalMoveSpeed: 3
