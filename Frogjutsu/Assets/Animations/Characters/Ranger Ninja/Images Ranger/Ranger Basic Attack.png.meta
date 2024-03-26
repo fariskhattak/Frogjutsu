@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7690d9ec4879e2f4b80c723f5c50f9dd
+guid: 23400252cea1c224da06104e49488e8f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,106 +97,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_0
+      name: Ranger Basic Attack_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 4
-        width: 23
+        x: 26
+        y: 17
+        width: 24
         height: 26
       alignment: 9
-      pivot: {x: 0.5233869, y: 0.61439234}
+      pivot: {x: 0.53246737, y: 0.6143259}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dcff987f68fe5a4db0e0d5abee7349e
-      internalID: -578459720
+      spriteID: 4748a10d68099b341996c38fd92f23a2
+      internalID: 191530610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_1
+      name: Ranger Basic Attack_1
       rect:
         serializedVersion: 2
-        x: 97
-        y: 4
-        width: 39
-        height: 29
-      alignment: 9
-      pivot: {x: 0.5048349, y: 0.6222508}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b67910fe0548e648838f1f0700a68ee
-      internalID: -182906820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_2
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 0
-        width: 38
-        height: 31
-      alignment: 9
-      pivot: {x: 0.4205202, y: 0.6142249}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2dfb6aa37ed24049908be139e3abeb3
-      internalID: -1777868579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_3
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 0
-        width: 38
-        height: 31
-      alignment: 9
-      pivot: {x: 0.4205202, y: 0.6142249}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e171283f1400e5544923064379a388c6
-      internalID: -114844460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_4
-      rect:
-        serializedVersion: 2
-        x: 347
-        y: 4
-        width: 25
+        x: 100
+        y: 17
+        width: 30
         height: 26
       alignment: 9
-      pivot: {x: 0.47795045, y: 0.61500776}
+      pivot: {x: 0.6199717, y: 0.61247313}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1ae4fa7bae264f44925c548aeb7e18f
-      internalID: 1129988186
+      spriteID: 1f1b7e303d2564644bfda37b3371eb27
+      internalID: -687025527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ranger Basic Attack_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 17
+        width: 28
+        height: 26
+      alignment: 9
+      pivot: {x: 0.4586498, y: 0.6146751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acc506a6706f664f83eff96c1ab1faf
+      internalID: 1870571124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ranger Basic Attack_3
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 17
+        width: 28
+        height: 26
+      alignment: 9
+      pivot: {x: 0.4586498, y: 0.6146751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a91454b7d576ed44819e8d75c4a9f8d
+      internalID: 929675259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ranger Basic Attack_4
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 17
+        width: 26
+        height: 26
+      alignment: 9
+      pivot: {x: 0.49039283, y: 0.6146751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2bb0440650a28746b7e514aaee9835d
+      internalID: 1136098752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ranger Basic Attack_5
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 17
+        width: 44
+        height: 26
+      alignment: 9
+      pivot: {x: 0.29162112, y: 0.6146751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe228a124f54b944fb640a8070c4dde6
+      internalID: -1420019901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ranger Basic Attack_6
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 17
+        width: 44
+        height: 26
+      alignment: 9
+      pivot: {x: 0.28970337, y: 0.6146751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b438e0b3626a94681922c4f1207c53
+      internalID: -305445492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ranger Basic Attack_7
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 17
+        width: 24
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5311381, y: 0.6146749}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af70889278ad00d4e8299ce9b3164943
+      internalID: 485149960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ranger Basic Attack_8
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 17
+        width: 24
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5311381, y: 0.6143259}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314eef4b46340f748b01543fe19985e0
+      internalID: 667702557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ranger Basic Attack_9
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 17
+        width: 24
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5311381, y: 0.6143259}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61398a1c5077e9643933e7c3a244f14b
+      internalID: 1170527734
       vertices: []
       indices: 
       edges: []
@@ -212,11 +317,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Assassin Basic Attack Horizontal_0: -578459720
-      Assassin Basic Attack Horizontal_1: -182906820
-      Assassin Basic Attack Horizontal_2: -1777868579
-      Assassin Basic Attack Horizontal_3: -114844460
-      Assassin Basic Attack Horizontal_4: 1129988186
+      Ranger Basic Attack_0: 191530610
+      Ranger Basic Attack_1: -687025527
+      Ranger Basic Attack_2: 1870571124
+      Ranger Basic Attack_3: 929675259
+      Ranger Basic Attack_4: 1136098752
+      Ranger Basic Attack_5: -1420019901
+      Ranger Basic Attack_6: -305445492
+      Ranger Basic Attack_7: 485149960
+      Ranger Basic Attack_8: 667702557
+      Ranger Basic Attack_9: 1170527734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

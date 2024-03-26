@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7690d9ec4879e2f4b80c723f5c50f9dd
+guid: ab84dfaecbf1d1a45a0e299ef2aa31fe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,106 +97,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_0
+      name: Raddish Basic Attack_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 4
-        width: 23
-        height: 26
-      alignment: 9
-      pivot: {x: 0.5233869, y: 0.61439234}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9dcff987f68fe5a4db0e0d5abee7349e
-      internalID: -578459720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_1
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 4
-        width: 39
-        height: 29
-      alignment: 9
-      pivot: {x: 0.5048349, y: 0.6222508}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b67910fe0548e648838f1f0700a68ee
-      internalID: -182906820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_2
-      rect:
-        serializedVersion: 2
-        x: 180
+        x: 0
         y: 0
-        width: 38
-        height: 31
+        width: 80
+        height: 80
       alignment: 9
-      pivot: {x: 0.4205202, y: 0.6142249}
+      pivot: {x: 0.52521616, y: 0.42780527}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2dfb6aa37ed24049908be139e3abeb3
-      internalID: -1777868579
+      spriteID: e75ea1f1c0ac17147a62a6ad25f8f3fb
+      internalID: 181195475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_3
+      name: Raddish Basic Attack_1
       rect:
         serializedVersion: 2
-        x: 260
+        x: 80
         y: 0
-        width: 38
-        height: 31
+        width: 80
+        height: 80
       alignment: 9
-      pivot: {x: 0.4205202, y: 0.6142249}
+      pivot: {x: 0.6773165, y: 0.39513952}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e171283f1400e5544923064379a388c6
-      internalID: -114844460
+      spriteID: 27a3b4ec663d7454eaafc2436ad562eb
+      internalID: 1914792268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Assassin Basic Attack Horizontal_4
+      name: Raddish Basic Attack_2
       rect:
         serializedVersion: 2
-        x: 347
-        y: 4
-        width: 25
-        height: 26
+        x: 160
+        y: 0
+        width: 80
+        height: 80
       alignment: 9
-      pivot: {x: 0.47795045, y: 0.61500776}
+      pivot: {x: 0.5264769, y: 0.42696014}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1ae4fa7bae264f44925c548aeb7e18f
-      internalID: 1129988186
+      spriteID: 6a95ae03c2a39d44f8deffcb9e20d7a6
+      internalID: -2011111496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raddish Basic Attack_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5264769, y: 0.4269601}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7349df260658e3e49837799b8b477bdc
+      internalID: -99629226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raddish Basic Attack_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5264769, y: 0.4269601}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e69ef6aa2648249b6cd9dd41b661ba
+      internalID: -1493779701
       vertices: []
       indices: 
       edges: []
@@ -212,11 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Assassin Basic Attack Horizontal_0: -578459720
-      Assassin Basic Attack Horizontal_1: -182906820
-      Assassin Basic Attack Horizontal_2: -1777868579
-      Assassin Basic Attack Horizontal_3: -114844460
-      Assassin Basic Attack Horizontal_4: 1129988186
+      Raddish Basic Attack_0: 181195475
+      Raddish Basic Attack_1: 1914792268
+      Raddish Basic Attack_2: -2011111496
+      Raddish Basic Attack_3: -99629226
+      Raddish Basic Attack_4: -1493779701
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
