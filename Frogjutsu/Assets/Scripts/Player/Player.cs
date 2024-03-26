@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
 
     protected bool isAlive;
 
-
     protected Rigidbody2D rb;
     protected Animator anim;
     protected SpriteRenderer sprite;
@@ -26,12 +25,14 @@ public class Player : MonoBehaviour
     public LayerMask enemies;
     private Vector3 startPosition;
     private Quaternion startRotation;
+    protected PlayerMovement playerMovement;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        playerMovement = GetComponent<PlayerMovement>();
 
         startPosition = transform.position;
         startRotation = transform.rotation;
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
             anim.SetTrigger("death");
             isAlive = false;
             rb.velocity = Vector2.zero;
-            GetComponent<PlayerMovement>().enabled = false;
+            playerMovement.enabled = false;
         }
 
     }
@@ -75,7 +76,7 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetHealth(maxHealth);
         isAlive = true;
-        GetComponent<PlayerMovement>().enabled = true;
+        playerMovement.enabled = true;
     }
 
     public virtual void Jump()
@@ -97,9 +98,14 @@ public class Player : MonoBehaviour
 
     public virtual void StartAttack()
     {
-        anim.SetBool("isAttacking", true);
+        if (playerMovement.IsGrounded())
+        {
+            anim.SetBool("isAttacking", true);
+        }
+
     }
 
+    // Used for melee attacks
     public virtual void Attack()
     {
         if (attackPoint != null)
