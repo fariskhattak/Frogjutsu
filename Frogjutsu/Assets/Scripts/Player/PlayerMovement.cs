@@ -11,9 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
-    public GameObject attackPoint;
-    public float radius;
-    public LayerMask enemies;
     [SerializeField] private LayerMask jumpableGround;
     private float dirX = 0f;
 
@@ -49,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            anim.SetBool("isAttacking", true);
+            player.StartAttack();
         }
 
         UpdateAnimationState();
@@ -94,32 +91,5 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 
-    public void EndAttack()
-    {
-        anim.SetBool("isAttacking", false);
-    }
 
-    public void Attack()
-    {
-        if (attackPoint != null)
-        {
-            Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemies);
-
-            foreach (Collider2D enemyGameObject in enemy)
-            {
-                Debug.Log("Hit Enemy");
-                enemyGameObject.GetComponent<EnemyHealth>().health -= player.damage;
-            }
-        }
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (attackPoint != null)
-        {
-            Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
-        }
-
-    }
 }

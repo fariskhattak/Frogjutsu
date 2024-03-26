@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class Player : MonoBehaviour
 {
@@ -20,7 +21,9 @@ public class Player : MonoBehaviour
     protected Rigidbody2D rb;
     protected Animator anim;
     protected SpriteRenderer sprite;
-
+    public GameObject attackPoint;
+    public float attackRadius;
+    public LayerMask enemies;
     private Vector3 startPosition;
     private Quaternion startRotation;
 
@@ -85,6 +88,40 @@ public class Player : MonoBehaviour
     {
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         // Debug.Log(moveSpeed);
+    }
+
+    public virtual void EndAttack()
+    {
+        anim.SetBool("isAttacking", false);
+    }
+
+    public virtual void StartAttack()
+    {
+        anim.SetBool("isAttacking", true);
+    }
+
+    public virtual void Attack()
+    {
+        if (attackPoint != null)
+        {
+            Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRadius, enemies);
+
+            foreach (Collider2D enemyGameObject in enemy)
+            {
+                Debug.Log("Hit Enemy");
+                enemyGameObject.GetComponent<EnemyHealth>().health -= damage;
+            }
+        }
+
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (attackPoint != null)
+        {
+            Gizmos.DrawWireSphere(attackPoint.transform.position, attackRadius);
+        }
+
     }
 
     public float GetMoveSpeed()
