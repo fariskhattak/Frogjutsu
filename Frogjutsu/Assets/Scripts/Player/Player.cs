@@ -64,7 +64,6 @@ public class Player : MonoBehaviour
     {
         if (isAlive)
         {
-
             Debug.Log("Player has died");
             anim.SetTrigger("death");
             isAlive = false;
@@ -124,19 +123,34 @@ public class Player : MonoBehaviour
             anim.SetTrigger("hit");
             if (rb != null)
             {
-                // Calculate horizontal knockback direction but keep it at ground level
-                Vector2 horizontalKnockbackDirection = (transform.position - collision.transform.position).normalized;
-                horizontalKnockbackDirection.y = 0; // Keep the force horizontal
+                // // Calculate horizontal knockback direction but keep it at ground level
+                // Vector2 horizontalKnockbackDirection = (transform.position - collision.transform.position).normalized;
+                // horizontalKnockbackDirection.y = 0; // Keep the force horizontal
 
-                // Apply an initial upward force
-                Vector2 upwardForce = Vector2.up * knockbackForce; // Adjust the multiplier as needed
-                rb.AddForce(upwardForce, ForceMode2D.Impulse);
+                // // Apply an initial upward force
+                // Vector2 upwardForce = Vector2.up * knockbackForce; // Adjust the multiplier as needed
+                // rb.AddForce(upwardForce, ForceMode2D.Impulse);
 
-                // Apply horizontal force
-                rb.AddForce(-horizontalKnockbackDirection * knockbackForce, ForceMode2D.Impulse);
-                // Debug.Log("Knockback Strength:" + knockbackForce);
-                // Debug.Log("Horizontal knockback Direction:" + horizontalKnockbackDirection);
-                // Debug.Log("Horizontal Knockback Strength * Direction:" + horizontalKnockbackDirection * knockbackForce);
+                // // Apply horizontal force
+                // rb.AddForce(-horizontalKnockbackDirection * knockbackForce, ForceMode2D.Impulse);
+                // // Debug.Log("Knockback Strength:" + knockbackForce);
+                // // Debug.Log("Horizontal knockback Direction:" + horizontalKnockbackDirection);
+                // // Debug.Log("Horizontal Knockback Strength * Direction:" + horizontalKnockbackDirection * knockbackForce);
+
+                // // Calculate knockback direction (opposite of collision normal)
+                // Vector2 knockbackDirection = -collision.contacts[0].normal;
+
+                // // Apply knockback force to the player
+                // rb.velocity = knockbackDirection * knockbackForce;
+
+                // Calculate knockback direction (opposite of collision normal)
+                Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+
+                // Apply knockback force to the player
+                rb.velocity = knockbackDirection * knockbackForce;
+
+                Debug.Log("Knockback direction: " + knockbackDirection);
+                Debug.Log("Knockback force: " + (knockbackDirection * knockbackForce));
             }
         }
     }

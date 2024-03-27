@@ -25,6 +25,11 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+    }
+
     public void Death()
     {
         gameObject.SetActive(false);

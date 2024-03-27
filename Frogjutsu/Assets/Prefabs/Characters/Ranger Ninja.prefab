@@ -215,19 +215,9 @@ MonoBehaviour:
   enemies:
     serializedVersion: 2
     m_Bits: 64
-  attackCooldown: 0.3
+  attackCooldown: 0
   firePoint: {fileID: 6846518213525229200}
-  arrows:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  arrowTag: Arrow
 --- !u!1 &5690205842750308729
 GameObject:
   m_ObjectHideFlags: 0

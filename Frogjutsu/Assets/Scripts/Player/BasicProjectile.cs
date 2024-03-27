@@ -7,13 +7,14 @@ public class BasicProjectile : MonoBehaviour
     [SerializeField] private float speed;
     private float direction;
     private bool hit;
+    private float lifetime;
+    private float damage;
 
+    [SerializeField] private LayerMask enemies;
     private BoxCollider2D boxCollider;
-    private Animator anim;
 
-    private void Awake()
+    private void Start()
     {
-        anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
@@ -22,17 +23,40 @@ public class BasicProjectile : MonoBehaviour
         if (hit) return;
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
+
+        lifetime += Time.deltaTime;
+        if (lifetime > 5)
+            gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         hit = true;
         boxCollider.enabled = false;
+        // Check if the collider's layer name matches the name of the "enemies" layer
+        if (((1 << collider.gameObject.layer) & enemies) != 0)
+        {
+            // Get the EnemyHealth component from the collided GameObject
+            EnemyHealth enemyHealth = collider.GetComponent<EnemyHealth>();
+
+            // If EnemyHealth component exists, deal damage
+            if (enemyHealth != null)
+            {
+                // Call a method in EnemyHealth to deal damage
+                enemyHealth.TakeDamage(damage);
+            }
+        }
         Deactivate();
+    }
+
+    public void SetDamage(float _damage)
+    {
+        damage = _damage;
     }
 
     public void SetDirection(float _direction)
     {
+        lifetime = 0;
         direction = _direction;
         gameObject.SetActive(true);
         hit = false;

@@ -27,7 +27,7 @@ public class Warrior : Player
             foreach (Collider2D enemyGameObject in enemy)
             {
                 Debug.Log("Hit Enemy");
-                enemyGameObject.GetComponent<EnemyHealth>().health -= damage;
+                enemyGameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
             }
         }
 
