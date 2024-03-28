@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4720661944309039406}
   m_Layer: 0
   m_Name: Warrior Ninja
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,6 +229,7 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 128
+  dirX: 0
 --- !u!114 &4720661944309039406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,9 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  attackPoint: {fileID: 2700484457330040754}
-  attackRadius: 0.65
   enemies:
     serializedVersion: 2
     m_Bits: 64
   additionalJumpForce: 5
+  attackPoint: {fileID: 2700484457330040754}
+  attackRadius: 0.65

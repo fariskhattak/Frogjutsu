@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -1993399133801182866}
   m_Layer: 0
   m_Name: Assassin Ninja
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,14 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b08412d91e6f414c9e68eef3fe8663d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPoint: {fileID: 0}
-  radius: 0
-  enemies:
-    serializedVersion: 2
-    m_Bits: 64
   jumpableGround:
     serializedVersion: 2
     m_Bits: 128
+  dirX: 0
 --- !u!114 &-1993399133801182866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,4 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  enemies:
+    serializedVersion: 2
+    m_Bits: 0
   additionalMoveSpeed: 3

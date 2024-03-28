@@ -7,7 +7,6 @@ TagManager:
   - HealthBar
   - Enemy
   - Arrow
-  - Sewer
   layers:
   - Default
   - TransparentFX

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3280689707509148227}
   m_Layer: 0
   m_Name: Ranger Ninja
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
