@@ -11,6 +11,7 @@ public class LevelSelection : MonoBehaviour
 
     public void Update()
     { //TODO move this method later
+        unlocked = true;
         UpdateLevelImage();
     }
 
