@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Firetrap : MonoBehaviour
 {
-    [SerializeField] public float damage;
+    [SerializeField] public int damage;
 
     [Header ("Firetrap Timers")]
     [SerializeField] public float activationDelay;
@@ -26,9 +26,9 @@ public class Firetrap : MonoBehaviour
             if (!triggered) {
                 StartCoroutine(ActivateFiretrap());
             }
-            // if (active) {
-            //     collision.GetComponent<Health>().TakeDamage(damage);
-            // }
+            if (active) {
+                collision.GetComponent<Player>().TakeDamage(damage);
+            }
         }
     }
 
