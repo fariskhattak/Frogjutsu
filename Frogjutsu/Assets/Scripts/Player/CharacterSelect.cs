@@ -11,8 +11,16 @@ public class CharacterSelect : MonoBehaviour
     private int selectedCharacter;
 
     [SerializeField] private TMP_Text className;
+    [SerializeField] private TMP_Text description;
 
-    String[] classes = { "warrior", "mage", "ranger", "assassin" };
+    String[] classes = { "Raphfrog", "Donafrog", "Leofrog", "Michafrog" };
+
+    String[] classDescriptions = {
+        "A stout warrior, wielding mighty weapons to crush foes",
+        "A master of arcane arts, casting powerful spells to dominate battles",
+        "A skilled archer, striking from afar with precision and agility",
+        "A silent shadow, swiftly dispatching enemies with lethal precision"
+    };
 
     private void Awake()
     {
@@ -23,6 +31,7 @@ public class CharacterSelect : MonoBehaviour
         }
         skins[selectedCharacter].SetActive(true);
         className.text = classes[selectedCharacter];
+        description.text = classDescriptions[selectedCharacter];
     }
 
     public void ChangeNext()
@@ -37,6 +46,7 @@ public class CharacterSelect : MonoBehaviour
         skins[selectedCharacter].SetActive(true);
         PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
         className.text = classes[selectedCharacter];
+        description.text = classDescriptions[selectedCharacter];
     }
 
     public void ChangeBack()
@@ -51,6 +61,7 @@ public class CharacterSelect : MonoBehaviour
         skins[selectedCharacter].SetActive(true);
         PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
         className.text = classes[selectedCharacter];
+        description.text = classDescriptions[selectedCharacter];
     }
 
     public void SelectCharacter()
