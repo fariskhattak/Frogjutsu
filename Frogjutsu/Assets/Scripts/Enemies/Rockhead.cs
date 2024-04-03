@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class Rockhead : Enemy
 {
-    [SerializeField] public float speed;
-    [SerializeField] public float range;
-    [SerializeField] public float checkDelay;
-    [SerializeField] public LayerMask playerLayer;
+    [SerializeField] private float speed;
+    [SerializeField] private float range;
+    [SerializeField] private float checkDelay;
+    [SerializeField] private LayerMask playerLayer;
     private float checkTimer;
     private Vector3 destination;
 
@@ -21,10 +21,10 @@ public class Rockhead : Enemy
 
     private void Update() {
         if (attacking) {
-        //   transform.Translate(destination * Time.deltaTime * speed);  
+          transform.Translate(destination * Time.deltaTime * speed);  
         }
         else {
-            // checkTimer += checkTimer.deltaTime;
+            checkTimer += Time.deltaTime;
             if (checkTimer > checkDelay) {
                 CheckForPlayer();
             }
@@ -57,7 +57,7 @@ public class Rockhead : Enemy
         attacking = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private new void OnTriggerEnter2D(Collider2D collision) {
         base.OnTriggerEnter2D(collision);
         Stop();
     }

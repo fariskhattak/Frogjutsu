@@ -898,7 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  activationDelay: 2
+  activationDelay: 0.5
   activeTime: 2
 --- !u!1 &1054872250
 GameObject:
@@ -1234,7 +1234,7 @@ Transform:
   m_GameObject: {fileID: 1161345479}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.51, y: 3.59, z: 2604.634}
+  m_LocalPosition: {x: 5.12, y: 3.59, z: 2604.634}
   m_LocalScale: {x: 7.203725, y: 7.203725, z: 7.203725}
   m_ConstrainProportionsScale: 0
   m_Children: []
