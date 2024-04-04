@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicProjectile : MonoBehaviour
+public class BasicMagic : MonoBehaviour
 {
     [SerializeField] private float speed;
     private float direction;
@@ -12,10 +12,12 @@ public class BasicProjectile : MonoBehaviour
 
     [SerializeField] private LayerMask enemies;
     private BoxCollider2D boxCollider;
+    private Animator anim;
 
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -33,6 +35,12 @@ public class BasicProjectile : MonoBehaviour
     {
         hit = true;
         // Check if the object has an animator component
+        if (anim != null)
+        {
+            Debug.Log("Animator component exists");
+            // Trigger a parameter to play an animation state
+            anim.SetTrigger("hit");
+        }
         boxCollider.enabled = false;
         // Check if the collider's layer name matches the name of the "enemies" layer
         if (((1 << collider.gameObject.layer) & enemies) != 0)
@@ -47,7 +55,6 @@ public class BasicProjectile : MonoBehaviour
                 enemyHealth.TakeDamage(damage);
             }
         }
-        Deactivate();
     }
 
     public void SetDamage(float _damage)

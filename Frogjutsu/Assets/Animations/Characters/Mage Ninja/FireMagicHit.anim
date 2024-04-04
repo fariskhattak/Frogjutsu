@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mage Basic Attack
+  m_Name: FireMagicHit
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,25 +21,21 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 363554901, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - time: 0.125
-      value: {fileID: -1125399471, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - time: 0.25
-      value: {fileID: -329982403, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - time: 0.375
-      value: {fileID: 996474446, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - time: 0.5
-      value: {fileID: 1879197740, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - time: 0.625
-      value: {fileID: -1456616915, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - time: 0.75
-      value: {fileID: 142619260, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
+      value: {fileID: 1977861320, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
+    - time: 0.055555556
+      value: {fileID: -766334299, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
+    - time: 0.11111111
+      value: {fileID: 961729325, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
+    - time: 0.16666667
+      value: {fileID: 1712047447, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
+    - time: 0.22222222
+      value: {fileID: -1742503879, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 8
+  m_SampleRate: 18
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -56,19 +52,17 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 363554901, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - {fileID: -1125399471, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - {fileID: -329982403, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - {fileID: 996474446, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - {fileID: 1879197740, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - {fileID: -1456616915, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
-    - {fileID: 142619260, guid: 80795430432484b4fbd1576e7b313b17, type: 3}
+    - {fileID: 1977861320, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
+    - {fileID: -766334299, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
+    - {fileID: 961729325, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
+    - {fileID: 1712047447, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
+    - {fileID: -1742503879, guid: 7df967258e79bc443b9617eb6a24441d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.875
+    m_StopTime: 0.2777778
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -88,15 +82,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.375
-    functionName: Shoot
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.75
-    functionName: EndAttack
+  - time: 0.2777778
+    functionName: Deactivate
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
