@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision) {
+    public virtual void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Player") {
             collision.GetComponent<Player>().TakeDamage(damage);
         }
