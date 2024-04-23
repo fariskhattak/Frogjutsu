@@ -7,6 +7,10 @@ TagManager:
   - HealthBar
   - Enemy
   - Arrow
+  - Mud
+  - Death Platform
+  - ManaBar
+  - Selected Character Image
   layers:
   - Default
   - TransparentFX
