@@ -12,7 +12,9 @@ public class Player : MonoBehaviour
     protected int currentHealth;
     protected HealthBar healthBar;
     protected float moveSpeed = 7f;
-    protected int mana = 50;
+    protected int maxMana = 50;
+    protected int currentMana;
+    protected ManaBar manaBar;
     protected float jumpForce = 14f;
     protected float knockbackForce = 15f;
     public float damage = 10;
@@ -41,7 +43,9 @@ public class Player : MonoBehaviour
         isAlive = true;
 
         currentHealth = maxHealth;
+        currentMana = maxMana;
         InitHealthBar();
+        InitManaBar();
 
     }
 
@@ -56,6 +60,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        anim.SetTrigger("hit");
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
@@ -81,7 +86,7 @@ public class Player : MonoBehaviour
     public void ResetPlayer()
     {
         if (deathCounter > 2){
-            SceneManager.LoadScene("CharacterSelect");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         } else {
             Debug.Log("Resetting Player");
             anim.SetTrigger("respawn"); // Assuming you have a reset animation or logic
@@ -89,6 +94,8 @@ public class Player : MonoBehaviour
             transform.rotation = startRotation;
             currentHealth = maxHealth;
             healthBar.SetHealth(maxHealth);
+            currentMana = maxMana;
+            manaBar.SetMana(maxMana);
             isAlive = true;
             playerMovement.enabled = true;
         }
@@ -130,7 +137,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            anim.SetTrigger("hit");
+            // anim.SetTrigger("hit");
             if (rb != null)
             {
 
@@ -138,7 +145,8 @@ public class Player : MonoBehaviour
                 Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
 
                 // Apply knockback force to the player
-                rb.velocity = knockbackDirection * knockbackForce;
+                // rb.velocity = knockbackDirection * knockbackForce;
+                rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
 
                 Debug.Log("Knockback direction: " + knockbackDirection);
                 Debug.Log("Knockback force: " + (knockbackDirection * knockbackForce));
@@ -163,6 +171,26 @@ public class Player : MonoBehaviour
             {
                 // Initialize health bar (as an example)
                 healthBar.SetMaxHealth(maxHealth);
+            }
+            else
+            {
+                Debug.LogError("The HealthBar component was not found on the object with tag 'HealthBar'.");
+            }
+        }
+        else
+        {
+            Debug.LogError("An object with the tag 'HealthBar' was not found in the scene.");
+        }
+    }
+    private void InitManaBar()
+    {
+        GameObject manaBarObject = GameObject.FindGameObjectWithTag("ManaBar");
+        if (manaBarObject != null)
+        {
+            manaBar = manaBarObject.GetComponent<ManaBar>();
+            if (manaBar != null)
+            {
+                manaBar.SetMaxMana(maxMana);
             }
             else
             {

@@ -9,6 +9,8 @@ TagManager:
   - Arrow
   - Mud
   - Death Platform
+  - ManaBar
+  - Selected Character Image
   layers:
   - Default
   - TransparentFX
