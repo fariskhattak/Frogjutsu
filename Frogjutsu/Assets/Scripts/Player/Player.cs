@@ -5,6 +5,7 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class Player : MonoBehaviour
     protected float knockbackForce = 15f;
     public float damage = 10;
 
-    public int deathCounter = 0;
+    public int lifeCounter = 3;
+    public TMP_Text lifeText;
 
     protected bool isAlive;
 
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour
         currentMana = maxMana;
         InitHealthBar();
         InitManaBar();
-
+        InitLifeText();
     }
 
     public virtual void Update()
@@ -74,7 +76,8 @@ public class Player : MonoBehaviour
         if (isAlive)
         {
             Debug.Log("Player has died");
-            deathCounter++;
+            lifeCounter--;
+            UpdateLifeText();
             anim.SetTrigger("death");
             isAlive = false;
             rb.velocity = Vector2.zero;
@@ -85,7 +88,7 @@ public class Player : MonoBehaviour
 
     public void ResetPlayer()
     {
-        if (deathCounter > 2){
+        if (lifeCounter <= 0){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         } else {
             Debug.Log("Resetting Player");
@@ -201,5 +204,32 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("An object with the tag 'HealthBar' was not found in the scene.");
         }
+    }
+
+    private void InitLifeText()
+    {
+        GameObject lifeTextObject = GameObject.FindGameObjectWithTag("Life Counter");
+        if (lifeTextObject != null)
+        {
+            lifeText = lifeTextObject.GetComponent<TMP_Text>();
+            if (lifeText != null)
+            {
+                UpdateLifeText();
+            }
+            else
+            {
+                Debug.LogError("TMP_Text component not found on the object with tag 'LifeText'.");
+            }
+        }
+        else
+        {
+            Debug.LogError("An object with the tag 'LifeText' was not found in the scene.");
+        }
+    }
+
+    private void UpdateLifeText()
+    {
+        if (lifeText != null)
+            lifeText.text = "x" + lifeCounter;
     }
 }

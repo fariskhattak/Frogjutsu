@@ -11,6 +11,7 @@ TagManager:
   - Death Platform
   - ManaBar
   - Selected Character Image
+  - Life Counter
   layers:
   - Default
   - TransparentFX
