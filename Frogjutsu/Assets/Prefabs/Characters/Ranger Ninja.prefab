@@ -212,6 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  lifeCounter: 3
+  lifeText: {fileID: 0}
   enemies:
     serializedVersion: 2
     m_Bits: 64
