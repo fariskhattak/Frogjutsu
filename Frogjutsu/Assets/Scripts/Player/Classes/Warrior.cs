@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Warrior : Player
 {
-    public float additionalJumpForce = 5f;
+    public float additionalJumpForce = 3f;
     public GameObject attackPoint;
     public float attackRadius;
     void Start()
     {
-        jumpForce += additionalJumpForce;
-        damage = 20;
+        playerStats.jumpForce += additionalJumpForce;
+        playerStats.damage = 20;
     }
-    public override void Jump()
-    {
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-    }
+    // public override void Jump()
+    // {
+    //     rb.velocity = new Vector2(rb.velocity.x, playerStats.jumpForce);
+    // }
 
     // Used for melee attacks
     public void MeleeAttack()
@@ -27,7 +27,7 @@ public class Warrior : Player
             foreach (Collider2D enemyGameObject in enemy)
             {
                 Debug.Log("Hit Enemy");
-                enemyGameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                enemyGameObject.GetComponent<EnemyHealth>().TakeDamage(playerStats.damage);
             }
         }
 

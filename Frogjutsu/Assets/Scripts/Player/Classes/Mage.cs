@@ -47,7 +47,7 @@ public class Mage : Player
         for (int i = 0; i < totalAmmo; i++) // Example: instantiate 10 ammo
         {
             GameObject newMagic = Instantiate(magicAmmoPrefab, transform.position, Quaternion.identity);
-            newMagic.GetComponent<BasicMagic>().SetDamage(damage);
+            newMagic.GetComponent<BasicMagic>().SetDamage(playerStats.damage);
             newMagic.SetActive(false);
             magicAmmo.Add(newMagic);
         }

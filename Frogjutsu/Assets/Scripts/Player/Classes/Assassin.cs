@@ -9,7 +9,7 @@ public class Assassin : Player
     public float attackRadius;
     public override void Run(float dirX)
     {
-        rb.velocity = new Vector2(dirX * (moveSpeed + additionalMoveSpeed), rb.velocity.y);
+        rb.velocity = new Vector2(dirX * (playerStats.moveSpeed + additionalMoveSpeed), rb.velocity.y);
     }
 
     // Used for melee attacks
@@ -22,7 +22,7 @@ public class Assassin : Player
             foreach (Collider2D enemyGameObject in enemy)
             {
                 Debug.Log("Hit Enemy");
-                enemyGameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                enemyGameObject.GetComponent<EnemyHealth>().TakeDamage(playerStats.damage);
             }
         }
 

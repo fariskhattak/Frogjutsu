@@ -47,7 +47,7 @@ public class Ranger : Player
         for (int i = 0; i < arrowObjects.Length; i++)
         {
             arrows[i] = arrowObjects[i];
-            arrows[i].GetComponent<BasicProjectile>().SetDamage(damage);
+            arrows[i].GetComponent<BasicProjectile>().SetDamage(playerStats.damage);
             arrows[i].SetActive(false);
         }
     }

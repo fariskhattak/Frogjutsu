@@ -11,22 +11,32 @@ public class UIManager : MonoBehaviour
     public Color[] characterColors;
     public Image characterProfileBorder;
 
+    public Image characterStatsProfile;
+    public Image characterStatsProfileBorder;
+
     public static bool paused = false;
     public GameObject pauseMenuUI;
     public GameObject playButton;
 
     public GameObject exitMenuUI;
     public GameObject noButton;
+    
+    public GameObject statsMenuUI;
+    public GameObject backButton;
     PlayerManager playerManager;
     Player player;
 
     void Start () {
         pauseMenuUI.SetActive(false);
         exitMenuUI.SetActive(false);
-        playerManager = FindObjectOfType<PlayerManager>();
+        statsMenuUI.SetActive(false);
+        playerManager = PlayerManager.Instance;
         characterDisplayUI.sprite = characterSprites[playerManager.characterIndex];
         characterProfileBorder.color = characterColors[playerManager.characterIndex];
         characterDisplayUI.enabled = true; // Make sure the image is enabled
+
+        characterStatsProfile.sprite = characterSprites[playerManager.characterIndex];
+        characterStatsProfileBorder.color = characterColors[playerManager.characterIndex];
 
         player = FindObjectOfType<Player>();
     }
@@ -54,6 +64,8 @@ public class UIManager : MonoBehaviour
 
     public void Pause()
     {
+        statsMenuUI.SetActive(false);
+        exitMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
         EventSystem.current.SetSelectedGameObject(playButton);
         Time.timeScale = 0f;
@@ -79,5 +91,12 @@ public class UIManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         exitMenuUI.SetActive(true);
         EventSystem.current.SetSelectedGameObject(noButton);
+    }
+
+    public void OpenStatsMenu()
+    {
+        pauseMenuUI.SetActive(false);
+        statsMenuUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(backButton);
     }
 }
