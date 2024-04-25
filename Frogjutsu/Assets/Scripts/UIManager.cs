@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI; // Required for UI components
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class UIManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class UIManager : MonoBehaviour
     public Sprite[] characterSprites; // Assign the character sprites in the inspector
     public Color[] characterColors;
     public Image characterProfileBorder;
+    public TMP_Text[] statsNumbers;
 
     public Image characterStatsProfile;
     public Image characterStatsProfileBorder;
@@ -84,6 +86,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         paused = false;
         SceneManager.LoadScene("MainMenu");
+        PlayerManager.Instance.playerStats = new Stats();
     }
 
     public void ShowMainMenuExitUI()
@@ -97,6 +100,11 @@ public class UIManager : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         statsMenuUI.SetActive(true);
+        statsNumbers[0].text = "" + (int) playerManager.playerStats.maxHealth;
+        statsNumbers[1].text = "" + (int) playerManager.playerStats.damage;
+        statsNumbers[2].text = "" + (int) playerManager.playerStats.defense;
+        statsNumbers[3].text = "" + (int) playerManager.playerStats.moveSpeed;
+        statsNumbers[4].text = "" + (int) playerManager.playerStats.maxMana;
         EventSystem.current.SetSelectedGameObject(backButton);
     }
 }

@@ -43,7 +43,7 @@ public class Stats
     // You might want to add methods here for modifying stats, like taking damage or restoring health
     public void TakeDamage(int damageAmount)
     {
-        int damageAfterDefense = Mathf.Clamp(damageAmount - (int)defense, 0, int.MaxValue);
+        int damageAfterDefense = Mathf.Clamp(damageAmount - (int)defense, 1, int.MaxValue);
         currentHealth -= damageAfterDefense;
         currentHealth = Mathf.Max(currentHealth, 0);
     }

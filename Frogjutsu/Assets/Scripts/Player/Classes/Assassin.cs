@@ -7,10 +7,15 @@ public class Assassin : Player
     public float additionalMoveSpeed = 3f;
     public GameObject attackPoint;
     public float attackRadius;
-    public override void Run(float dirX)
+    void Start()
     {
-        rb.velocity = new Vector2(dirX * (playerStats.moveSpeed + additionalMoveSpeed), rb.velocity.y);
+        playerStats.moveSpeed += additionalMoveSpeed;
+        PlayerManager.Instance.playerStats = playerStats;
     }
+    // public override void Run(float dirX)
+    // {
+    //     rb.velocity = new Vector2(dirX * playerStats.moveSpeed, rb.velocity.y);
+    // }
 
     // Used for melee attacks
     public void MeleeAttack()
