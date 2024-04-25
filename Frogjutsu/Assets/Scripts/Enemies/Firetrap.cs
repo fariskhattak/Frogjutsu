@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Firetrap : MonoBehaviour
 {
-    [SerializeField] public int damage;
+    protected int damage = 10;
 
     [Header ("Firetrap Timers")]
     [SerializeField] public float activationDelay;
@@ -20,13 +20,14 @@ public class Firetrap : MonoBehaviour
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    public virtual void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Player" )
         {
             if (!triggered) {
                 StartCoroutine(ActivateFiretrap());
             }
-            if (active) {
+            if (triggered) {
+                if (active)
                 collision.GetComponent<Player>().TakeDamage(damage);
             }
         }

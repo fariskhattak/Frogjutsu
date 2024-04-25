@@ -1,64 +1,85 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-public class Rockhead : Enemy
+public class RockHeadEnemy : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float range;
-    [SerializeField] private float checkDelay;
-    [SerializeField] private LayerMask playerLayer;
-    private float checkTimer;
-    private Vector3 destination;
+    public float slamInterval = 3f; // Time interval between each slam
+    public float warningDuration = 1; // Duration of the warning indicator
+    protected int damage = 100; // Damage dealt by the enemy
 
-    private bool attacking;
+    private float nextSlamTime; // Time when the next slam will occur
+    private bool isSlamming; // Flag to track if the rock head is currently slamming
+    private Vector3 originalPosition; // Original position of the rock head
 
-    private Vector3[] directions = new Vector3[4];
+    void Start()
+    {
+        nextSlamTime = Time.time + slamInterval; // Set initial slam time
+        originalPosition = transform.position; // Store the original position
+    }
 
-    private void OnEnable() {
-        Stop();
-    }    
-
-    private void Update() {
-        if (attacking) {
-          transform.Translate(destination * Time.deltaTime * speed);  
+    void Update()
+    {
+        if (Time.time >= nextSlamTime && !isSlamming)
+        {
+            StartCoroutine(StartSlamSequence());
         }
-        else {
-            checkTimer += Time.deltaTime;
-            if (checkTimer > checkDelay) {
-                CheckForPlayer();
+    }
+
+    IEnumerator StartSlamSequence()
+    {
+        isSlamming = true;
+
+        Debug.Log("Warning: Rock Head is about to slam!");
+
+        yield return new WaitForSeconds(warningDuration);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Ground"));
+
+        if (hit.collider != null)
+        {
+            float slamDuration = 0.1f;
+
+            Vector3 targetPosition = hit.point;
+
+            float startTime = Time.time;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < slamDuration)
+            {
+                // Faster interpolation on the way down
+                float t = elapsedTime / slamDuration;
+                t = t * t; // Square the time value for faster movement
+                transform.position = Vector3.Lerp(originalPosition, targetPosition, t);
+                elapsedTime = Time.time - startTime;
+                yield return null;
+            }
+
+            // Wait for 2 seconds before returning to original position
+            yield return new WaitForSeconds(2f);
+
+            startTime = Time.time;
+            elapsedTime = 0f;
+
+            while (elapsedTime < slamDuration)
+            {
+                // Slower interpolation on the way up
+                float t = elapsedTime / slamDuration;
+                t = Mathf.Sqrt(t); // Use square root for slower movement
+                transform.position = Vector3.Lerp(targetPosition, originalPosition, t);
+                elapsedTime = Time.time - startTime;
+                yield return null;
             }
         }
+
+        isSlamming = false;
+        nextSlamTime = Time.time + slamInterval; // Update next slam time
     }
 
-    private void CheckForPlayer() {
-        CalculateDirections();
-        for (int i = 0; i < directions.Length; i++) {
-            Debug.DrawRay(transform.position, directions[i], Color.red);
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, directions[i], range, playerLayer);
-
-            if (hit.collider != null && !attacking) {
-                attacking = true;
-                destination = directions[i];
-                checkTimer = 0;
-            }
+    public virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<Player>().TakeDamage(damage);
         }
-    }
-
-    private void CalculateDirections() {
-        directions[0] = transform.right * range;
-        directions[1] = -transform.right * range;
-        directions[2] = transform.up * range;
-        directions[3] = -transform.up * range;
-    }
-
-    private void Stop() {
-        destination = transform.position;
-        attacking = false;
-    }
-
-    private new void OnTriggerEnter2D(Collider2D collision) {
-        base.OnTriggerEnter2D(collision);
-        Stop();
     }
 }
