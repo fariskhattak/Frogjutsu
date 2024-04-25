@@ -5,22 +5,16 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
-    protected int maxHealth = 100;
-    protected int currentHealth;
+    public Stats playerStats;
     protected HealthBar healthBar;
-    protected float moveSpeed = 7f;
-    protected int maxMana = 50;
-    protected int currentMana;
     protected ManaBar manaBar;
-    protected float jumpForce = 14f;
     protected float knockbackForce = 15f;
-    public float damage = 10;
-
-    public int deathCounter = 0;
-
+    public int lifeCounter = 3;
+    public TMP_Text lifeText;
     protected bool isAlive;
 
     protected Rigidbody2D rb;
@@ -41,12 +35,12 @@ public class Player : MonoBehaviour
         startPosition = transform.position;
         startRotation = transform.rotation;
         isAlive = true;
+        
+        playerStats = PlayerManager.Instance.playerStats;
 
-        currentHealth = maxHealth;
-        currentMana = maxMana;
         InitHealthBar();
         InitManaBar();
-
+        InitLifeText();
     }
 
     public virtual void Update()
@@ -61,9 +55,9 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         anim.SetTrigger("hit");
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-        if (currentHealth <= 0)
+        playerStats.TakeDamage(damage);
+        healthBar.SetHealth(playerStats.currentHealth);
+        if (playerStats.currentHealth <= 0)
         {
             Die();
         }
@@ -74,7 +68,8 @@ public class Player : MonoBehaviour
         if (isAlive)
         {
             Debug.Log("Player has died");
-            deathCounter++;
+            lifeCounter--;
+            UpdateLifeText();
             anim.SetTrigger("death");
             isAlive = false;
             rb.velocity = Vector2.zero;
@@ -85,17 +80,16 @@ public class Player : MonoBehaviour
 
     public void ResetPlayer()
     {
-        if (deathCounter > 2){
+        if (lifeCounter <= 0){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         } else {
             Debug.Log("Resetting Player");
             anim.SetTrigger("respawn"); // Assuming you have a reset animation or logic
             transform.position = startPosition;
             transform.rotation = startRotation;
-            currentHealth = maxHealth;
-            healthBar.SetHealth(maxHealth);
-            currentMana = maxMana;
-            manaBar.SetMana(maxMana);
+            playerStats.DeathReset();
+            healthBar.SetHealth(playerStats.maxHealth);
+            manaBar.SetMana(playerStats.maxMana);
             isAlive = true;
             playerMovement.enabled = true;
         }
@@ -104,13 +98,13 @@ public class Player : MonoBehaviour
 
     public virtual void Jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        rb.velocity = new Vector2(rb.velocity.x, playerStats.jumpForce);
         // Debug.Log(jumpForce);
     }
 
     public virtual void Run(float dirX)
     {
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(dirX * playerStats.moveSpeed, rb.velocity.y);
         // Debug.Log(moveSpeed);
     }
 
@@ -130,7 +124,7 @@ public class Player : MonoBehaviour
 
     public float GetMoveSpeed()
     {
-        return moveSpeed;
+        return playerStats.moveSpeed;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -170,7 +164,7 @@ public class Player : MonoBehaviour
             if (healthBar != null)
             {
                 // Initialize health bar (as an example)
-                healthBar.SetMaxHealth(maxHealth);
+                healthBar.SetMaxHealth(playerStats.maxHealth);
             }
             else
             {
@@ -190,16 +184,43 @@ public class Player : MonoBehaviour
             manaBar = manaBarObject.GetComponent<ManaBar>();
             if (manaBar != null)
             {
-                manaBar.SetMaxMana(maxMana);
+                manaBar.SetMaxMana(playerStats.maxMana);
             }
             else
             {
-                Debug.LogError("The HealthBar component was not found on the object with tag 'HealthBar'.");
+                Debug.LogError("The ManaBar component was not found on the object with tag 'ManaBar'.");
             }
         }
         else
         {
-            Debug.LogError("An object with the tag 'HealthBar' was not found in the scene.");
+            Debug.LogError("An object with the tag 'ManaBar' was not found in the scene.");
         }
+    }
+
+    private void InitLifeText()
+    {
+        GameObject lifeTextObject = GameObject.FindGameObjectWithTag("Life Counter");
+        if (lifeTextObject != null)
+        {
+            lifeText = lifeTextObject.GetComponent<TMP_Text>();
+            if (lifeText != null)
+            {
+                UpdateLifeText();
+            }
+            else
+            {
+                Debug.LogError("TMP_Text component not found on the object with tag 'LifeText'.");
+            }
+        }
+        else
+        {
+            Debug.LogError("An object with the tag 'LifeText' was not found in the scene.");
+        }
+    }
+
+    private void UpdateLifeText()
+    {
+        if (lifeText != null)
+            lifeText.text = "x" + lifeCounter;
     }
 }
