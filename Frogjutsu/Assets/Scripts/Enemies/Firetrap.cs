@@ -1,38 +1,44 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class Firetrap : MonoBehaviour
 {
-    [SerializeField] public int damage;
+    protected int damage = 10;
 
-    [Header ("Firetrap Timers")]
-    [SerializeField] public float activationDelay;
-    [SerializeField] public float activeTime;
+    [Header("Firetrap Timers")]
+    [SerializeField] private float activationDelay;
+    [SerializeField] private float activeTime;
     private Animator anim;
     private SpriteRenderer spriteRend;
 
     private bool triggered;
     private bool active;
 
-    private void Awake() {
+    private void Awake()
+    {
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "Player" )
+    // OnTriggerEnter2D is called when a collider enters the trigger zone
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player")) // Use CompareTag for better performance
         {
-            if (!triggered) {
+            if (!triggered)
+            {
                 StartCoroutine(ActivateFiretrap());
             }
-            if (active) {
+            if (triggered && active)
+            {
+                // Ensure that the TakeDamage method is called on the Player component
                 collision.GetComponent<Player>().TakeDamage(damage);
             }
         }
     }
 
-    private IEnumerator ActivateFiretrap() {
+    private IEnumerator ActivateFiretrap()
+    {
         triggered = true;
         spriteRend.color = Color.red;
 
