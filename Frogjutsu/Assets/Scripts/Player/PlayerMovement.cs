@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     [SerializeField] private LayerMask jumpableGround;
     public float dirX = 0f;
-     public AudioSource jumpSound;
 
     private enum MovementState { idle, running, jumping, falling }
     // Start is called before the first frame update
@@ -24,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        jumpSound = GetComponent<AudioSource>();
         if (player is Warrior)
             player = (Warrior)player;
         else if (player is Mage)
@@ -43,8 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            Debug.Log("Jump sound suppose to play");
-            PlayJumpSound();
             player.Jump();
         }
 
@@ -89,12 +85,6 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-    private void PlayJumpSound()
-    {
-        if (jumpSound != null)
-        {
-            jumpSound.Play();
-        }
-    }
+
 
 }
