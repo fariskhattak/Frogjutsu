@@ -331,9 +331,9 @@ GameObject:
   m_Component:
   - component: {fileID: 167637092}
   - component: {fileID: 167637091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PATHFINDING GRID
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -727,11 +727,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e3e359c2dd57be4ca5f818212233eb4, type: 3}
---- !u!4 &445886049 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9143612067658000564, guid: 0e3e359c2dd57be4ca5f818212233eb4, type: 3}
-  m_PrefabInstance: {fileID: 445886048}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &542586337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -943,11 +938,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 779425387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Script: {fileID: 11500000, guid: 76fd08c8471d989448b03771c0de0a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 445886049}
 --- !u!1001 &784580319
 PrefabInstance:
   m_ObjectHideFlags: 0
