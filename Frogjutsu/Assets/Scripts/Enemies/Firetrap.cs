@@ -6,50 +6,77 @@ public class Firetrap : MonoBehaviour
     protected int damage = 10;
 
     [Header("Firetrap Timers")]
-    [SerializeField] private float activationDelay;
     [SerializeField] private float activeTime;
+    [SerializeField] private float cooldownTime;
+    [SerializeField] private float damageInterval = 0.2f;
     private Animator anim;
-    private SpriteRenderer spriteRend;
-
-    private bool triggered;
     private bool active;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        spriteRend = GetComponent<SpriteRenderer>();
-    }
-
-    // OnTriggerEnter2D is called when a collider enters the trigger zone
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player")) // Use CompareTag for better performance
-        {
-            if (!triggered)
-            {
-                StartCoroutine(ActivateFiretrap());
-            }
-            if (triggered && active)
-            {
-                // Ensure that the TakeDamage method is called on the Player component
-                collision.GetComponent<Player>().TakeDamage(damage);
-            }
-        }
+        // Start the coroutine to activate the firetrap periodically
+        StartCoroutine(ActivateFiretrap());
     }
 
     private IEnumerator ActivateFiretrap()
     {
-        triggered = true;
-        spriteRend.color = Color.red;
+        while (true)
+        {
+            // Activate the firetrap
+            Activate();
 
-        yield return new WaitForSeconds(activationDelay);
-        spriteRend.color = Color.white;
+            // Wait for the active time
+            yield return new WaitForSeconds(activeTime);
+
+            // Deactivate the firetrap
+            Deactivate();
+
+            // Wait for the cooldown time
+            yield return new WaitForSeconds(cooldownTime);
+        }
+    }
+
+    private void Activate()
+    {
         active = true;
         anim.SetBool("activated", true);
-
-        yield return new WaitForSeconds(activeTime);
-        active = false;
-        triggered = false;
-        anim.SetBool("activated", false);
+        // Start coroutine to continuously apply damage while the firetrap is active
+        StartCoroutine(ApplyDamage());
     }
+
+    private void Deactivate()
+    {
+        active = false;
+        anim.SetBool("activated", false);
+        // Stop coroutine for applying damage when firetrap is deactivated
+        StopCoroutine(ApplyDamage());
+    }
+
+    private IEnumerator ApplyDamage()
+    {
+        while (active)
+        {
+            yield return new WaitForSeconds(damageInterval);
+
+            // Apply damage to the player if they are within the firetrap's area
+            Player player = FindObjectOfType<Player>(); // You may need a more sophisticated way to find the player
+            if (player != null && IsPlayerInFiretrap(player.transform.position))
+            {
+                player.TakeDamage(damage);
+
+            }
+        }
+    }
+
+    private bool IsPlayerInFiretrap(Vector2 playerPosition)
+    {
+        // Calculate the distance between the player's position and the firetrap's center
+        float distance = Vector2.Distance(playerPosition, transform.position);
+
+        // If the distance is less than half the width of the firetrap's collider, the player is within the firetrap
+        // Adjust the threshold as needed based on the size of your firetrap
+        return distance < (GetComponent<Collider2D>().bounds.size.x / 2);
+    }
+
 }
