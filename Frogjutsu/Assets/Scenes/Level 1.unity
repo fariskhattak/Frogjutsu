@@ -749,6 +749,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 812005436}
+    - target: {fileID: 5305217736765765877, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: health
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_2
@@ -814,6 +818,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 788551321}
+    - target: {fileID: 5305217736765765877, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: health
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_4
@@ -1011,6 +1019,10 @@ PrefabInstance:
     - target: {fileID: 1870220717583663654, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
       propertyPath: m_Constraints
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2679851623039576747, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
+      propertyPath: health
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 5331303772006745133, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
       propertyPath: m_Name
@@ -1426,7 +1438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.79
+  radius: 1.13
   height: 2
   canMove: 1
   maxSpeed: 3
@@ -1492,7 +1504,7 @@ Transform:
   m_GameObject: {fileID: 779425387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.12, y: -15.3, z: 3.2249124}
+  m_LocalPosition: {x: 10.12, y: -11.53, z: 3.2249124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3125,6 +3137,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 203576055}
+    - target: {fileID: 5305217736765765877, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: health
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_3
@@ -3176,11 +3192,11 @@ GameObject:
   - component: {fileID: 1505944221}
   - component: {fileID: 1505944220}
   - component: {fileID: 1505944217}
-  - component: {fileID: 1505944216}
+  - component: {fileID: 1505944223}
   - component: {fileID: 1505944215}
   - component: {fileID: 1505944222}
   m_Layer: 6
-  m_Name: MushroomEnemy PATHTesting
+  m_Name: BeeEnemy PATHTesting
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3198,20 +3214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2368c7fc0f4a46340b87b2ca88b49932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 75
   currentHealth: 0
---- !u!114 &1505944216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505944213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec4c2e5a9792974ca8ddb202278f6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1505944217
 Animator:
   serializedVersion: 5
@@ -3222,7 +3226,7 @@ Animator:
   m_GameObject: {fileID: 1505944213}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c6d42c49370ca5d438315284ed8a401b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0cd418958d240ee4abc9a0e104b7d28c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3274,7 +3278,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6367560908665664636, guid: a6465882e447a7346b1d80709f6094be, type: 3}
+  m_Sprite: {fileID: -7659945631384244969, guid: 8721cbbfe3ba6a8418cd21a8de3a410c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3294,7 +3298,7 @@ Transform:
   m_GameObject: {fileID: 1505944213}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.35, z: 0}
+  m_LocalPosition: {x: 0, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3335,6 +3339,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.1982292}
   serializedVersion: 2
   m_Radius: 0.8513278
+--- !u!114 &1505944223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505944213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f262de1e4e4abef439262df9075c9673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1522580180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14898,6 +14914,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2679851623039576747, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
+      propertyPath: health
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 5331303772006745133, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
       propertyPath: m_Name
       value: PlantEnemy_3
@@ -15345,6 +15365,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2679851623039576747, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
+      propertyPath: health
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 5331303772006745133, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
       propertyPath: m_Name
       value: PlantEnemy_1
@@ -15573,6 +15597,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1802885851}
+    - target: {fileID: 5305217736765765877, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: health
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_1
