@@ -191,7 +191,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!95 &2983198313075785059
 Animator:
@@ -242,11 +242,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1d3406cd6a69488ec82d9d226c33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
-  deathCounter: 0
+  playerStats:
+    maxHealth: 100
+    currentHealth: 0
+    maxMana: 50
+    currentMana: 0
+    moveSpeed: 7
+    damage: 10
+    defense: 10
+    jumpForce: 14
+  lifeCounter: 3
+  lifeText: {fileID: 0}
   enemies:
     serializedVersion: 2
     m_Bits: 64
-  additionalJumpForce: 5
+  additionalJumpForce: 3
   attackPoint: {fileID: 2700484457330040754}
   attackRadius: 0.65

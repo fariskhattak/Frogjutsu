@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         startPosition = transform.position;
         startRotation = transform.rotation;
         isAlive = true;
-        
+
         playerStats = PlayerManager.Instance.playerStats;
 
         InitHealthBar();
@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
         anim.SetTrigger("hit");
         playerStats.TakeDamage(damage);
         healthBar.SetHealth(playerStats.currentHealth);
+        Debug.Log("Player health: " + playerStats.currentHealth);
         if (playerStats.currentHealth <= 0)
         {
             Die();
@@ -80,20 +81,24 @@ public class Player : MonoBehaviour
 
     public void ResetPlayer()
     {
-        if (lifeCounter <= 0){
+        playerStats.DeathReset();
+
+        if (lifeCounter <= 0)
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        } else {
+        }
+        else
+        {
             Debug.Log("Resetting Player");
             anim.SetTrigger("respawn"); // Assuming you have a reset animation or logic
             transform.position = startPosition;
             transform.rotation = startRotation;
-            playerStats.DeathReset();
             healthBar.SetHealth(playerStats.maxHealth);
             manaBar.SetMana(playerStats.maxMana);
             isAlive = true;
             playerMovement.enabled = true;
         }
-        
+
     }
 
     public virtual void Jump()
@@ -144,12 +149,40 @@ public class Player : MonoBehaviour
 
                 Debug.Log("Knockback direction: " + knockbackDirection);
                 Debug.Log("Knockback force: " + (knockbackDirection * knockbackForce));
+
+                // transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+
+                // Vector2 difference = (transform.position - collision.transform.position).normalized;
+                // Vector2 force = difference * knockbackForce;
+                // Vector2 horizontal = new Vector2(force.x, 0);
+                // Vector2 vertical = new Vector2(0, force.y);
+                // rb.AddForce(horizontal, ForceMode2D.Impulse);
+                // rb.AddForce(vertical, ForceMode2D.Impulse);
+                // // rb.AddForce(force, ForceMode2D.Impulse); //if you don't want to take into consideration enemy's mass then use ForceMode.VelocityChange
+                // Debug.Log("Knockback direction: " + difference);
+                // Debug.Log("Knockback force: " + force);
+
+                // Vector2 difference = (transform.position - collision.transform.position).normalized;
+                // Vector2 force = difference * knockbackForce;
+                // Vector2 horizontalForce = new Vector2(force.x, 0); // Keep only horizontal component
+                // rb.AddForce(horizontalForce, ForceMode2D.Impulse);
+
+                // rb.velocity = Vector2.zero;
+                // transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+
+                // Vector2 horizontalForce = new Vector2(10f, 0); // Example force magnitude
+                // rb.AddForce(horizontalForce, ForceMode2D.Impulse);
+                // Debug.Log("Force Applied: " + horizontalForce);
+
+
             }
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.tag == "Death Platform") {
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Death Platform")
+        {
             Die();
         }
     }

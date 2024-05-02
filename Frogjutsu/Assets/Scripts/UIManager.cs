@@ -85,6 +85,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         paused = false;
+        player.playerStats.DeathReset();
         SceneManager.LoadScene("MainMenu");
         PlayerManager.Instance.playerStats = new Stats();
     }

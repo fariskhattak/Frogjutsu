@@ -63,6 +63,7 @@ public class PlayerManager : MonoBehaviour
             currentPlayer = Instantiate(playerPrefabs[characterIndex], startPosition, Quaternion.identity);
             // cameraController.player = currentPlayer.transform;
             InitCameraController(currentPlayer);
+            playerStats.DeathReset();
             currentPlayer.GetComponent<Player>().playerStats = playerStats;
         }
     }
@@ -92,6 +93,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (!nonPlayerScenes.Contains(scene.name)) {
             InstantiatePlayer();
+            Debug.Log("Instantiated player, Current Health is: " + playerStats.currentHealth);
         } else {
             Debug.Log("Player not instantiated, scene is not for gameplay: " + scene.name);
             EnsurePlayerIsDestroyed();
