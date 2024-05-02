@@ -13,6 +13,7 @@ public class Ranger : Player
     void Start()
     {
         InitArrows();
+        playerStats.damage = 20;
     }
 
     public override void Update()
