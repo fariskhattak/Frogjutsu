@@ -1934,8 +1934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddc0674673f0554cadcfdd1fa156c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slamInterval: 3
-  warningDuration: 1.5
+  slamInterval: 1
+  warningDuration: 1
 --- !u!50 &970725865
 Rigidbody2D:
   serializedVersion: 4
@@ -2334,7 +2334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeTime: 3
-  cooldownTime: 3
+  cooldownTime: 2.7
   damageInterval: 0.09
 --- !u!1 &1115152154
 GameObject:
