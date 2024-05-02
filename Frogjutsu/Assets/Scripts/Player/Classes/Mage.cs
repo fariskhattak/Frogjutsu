@@ -13,7 +13,7 @@ public class Mage : Player
 
     void Start()
     {
-        playerStats.damage = 30;
+        playerStats.damage = 20;
         PlayerManager.Instance.playerStats = playerStats;
         InitMagicAmmo();
     }
