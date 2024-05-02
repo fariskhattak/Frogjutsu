@@ -491,6 +491,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1870220717583663654, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5331303772006745133, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
       propertyPath: m_Name
       value: PlantEnemy_3
@@ -890,6 +894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RadishEnemy_3
       objectReference: {fileID: 0}
+    - target: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1253,6 +1261,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1870220717583663654, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5331303772006745133, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
       propertyPath: m_Name
       value: PlantEnemy_2
@@ -8384,6 +8396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RadishEnemy_4
       objectReference: {fileID: 0}
+    - target: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8599,7 +8615,7 @@ Transform:
   m_GameObject: {fileID: 1236699409}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 105.26, y: -1.01, z: -1.2740761}
+  m_LocalPosition: {x: 102.92, y: -1.01, z: -1.2740761}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9436,6 +9452,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1870220717583663654, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5331303772006745133, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
       propertyPath: m_Name
       value: PlantEnemy_1
@@ -9843,6 +9863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RadishEnemy_2
       objectReference: {fileID: 0}
+    - target: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10035,6 +10059,10 @@ PrefabInstance:
     - target: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
       propertyPath: m_Name
       value: RadishEnemy_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
