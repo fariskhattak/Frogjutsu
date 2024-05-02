@@ -5,7 +5,7 @@ public class RockHeadEnemy : MonoBehaviour
 {
     public float slamInterval = 3f; // Time interval between each slam
     public float warningDuration = 1; // Duration of the warning indicator
-    protected int damage = 100; // Damage dealt by the enemy
+    protected int damage = 300; // Damage dealt by the enemy
 
     private float nextSlamTime; // Time when the next slam will occur
     private bool isSlamming; // Flag to track if the rock head is currently slamming

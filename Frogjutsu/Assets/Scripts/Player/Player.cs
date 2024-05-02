@@ -54,16 +54,17 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        anim.SetTrigger("hit");
-        playerStats.TakeDamage(damage);
-        healthBar.SetHealth(playerStats.currentHealth);
-        Debug.Log("Player health: " + playerStats.currentHealth);
-        if (playerStats.currentHealth <= 0)
+        if (isAlive)
         {
-            Die();
+            anim.SetTrigger("hit");
+            playerStats.TakeDamage(damage);
+            healthBar.SetHealth(playerStats.currentHealth);
+            if (playerStats.currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
-
     public void Die()
     {
         if (isAlive)
