@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 
@@ -10,11 +11,15 @@ public class RockHeadEnemy : MonoBehaviour
     private float nextSlamTime; // Time when the next slam will occur
     private bool isSlamming; // Flag to track if the rock head is currently slamming
     private Vector3 originalPosition; // Original position of the rock head
+    private Collider2D collider;
+    private Animator animator; // Animator component
 
     void Start()
     {
         nextSlamTime = Time.time + slamInterval; // Set initial slam time
         originalPosition = transform.position; // Store the original position
+        collider = GetComponent<Collider2D>(); // Get the collider
+        animator = GetComponent<Animator>(); // Get the animator component
     }
 
     void Update()
@@ -33,40 +38,40 @@ public class RockHeadEnemy : MonoBehaviour
 
         yield return new WaitForSeconds(warningDuration);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Ground"));
+        // Calculate the target position taking collider size into account
+        float colliderBottom = collider.bounds.min.y;
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, colliderBottom), Vector2.down, Mathf.Infinity, LayerMask.GetMask("Ground"));
+        float offset = collider.bounds.extents.y; // Half of the height of the collider
+        float targetY = hit.point.y + offset; // Adjust the target Y position to be above the ground by the Rock Head's height
+        Vector3 targetPosition = new Vector3(hit.point.x, targetY, transform.position.z); // Maintain the same X and Z coordinates
+
 
         if (hit.collider != null)
         {
-            float slamDuration = 0.1f;
 
-            Vector3 targetPosition = hit.point;
+            float slamDuration = 0.5f; // Duration of the slam movement
 
             float startTime = Time.time;
-            float elapsedTime = 0f;
 
-            while (elapsedTime < slamDuration)
+            // Move towards the slam position
+            while (Time.time - startTime < slamDuration)
             {
-                // Faster interpolation on the way down
-                float t = elapsedTime / slamDuration;
+                float t = (Time.time - startTime) / slamDuration;
                 t = t * t; // Square the time value for faster movement
                 transform.position = Vector3.Lerp(originalPosition, targetPosition, t);
-                elapsedTime = Time.time - startTime;
                 yield return null;
             }
 
             // Wait for 2 seconds before returning to original position
             yield return new WaitForSeconds(2f);
 
+            // Return to the original position
             startTime = Time.time;
-            elapsedTime = 0f;
-
-            while (elapsedTime < slamDuration)
+            while (Time.time - startTime < slamDuration)
             {
-                // Slower interpolation on the way up
-                float t = elapsedTime / slamDuration;
+                float t = (Time.time - startTime) / slamDuration;
                 t = Mathf.Sqrt(t); // Use square root for slower movement
                 transform.position = Vector3.Lerp(targetPosition, originalPosition, t);
-                elapsedTime = Time.time - startTime;
                 yield return null;
             }
         }
