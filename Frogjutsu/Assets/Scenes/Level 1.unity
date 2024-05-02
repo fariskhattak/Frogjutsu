@@ -490,10 +490,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1157777357}
-    - target: {fileID: 2336333520726557549, guid: e3bc0b889eeef0d459ce3bff18c49fb6, type: 3}
-      propertyPath: cameraController
-      value: 
-      objectReference: {fileID: 938001955}
     - target: {fileID: 5068722599201578997, guid: e3bc0b889eeef0d459ce3bff18c49fb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.259968
@@ -1894,17 +1890,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3195132905320226177, guid: c5ce4245ed0326e40bdb0fbaeab85c53, type: 3}
   m_PrefabInstance: {fileID: 889247748}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &938001955 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8014205050926282082, guid: d672f5bcc0f94bb4dbb9e997f01feac3, type: 3}
-  m_PrefabInstance: {fileID: 1394092948304632585}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eca717017dde6a43a0360ce56ea3344, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &970725863
 GameObject:
   m_ObjectHideFlags: 0
