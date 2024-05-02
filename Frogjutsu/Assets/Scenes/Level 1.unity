@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeTime: 3
   cooldownTime: 3
-  damageInterval: 0.3
+  damageInterval: 0.24
 --- !u!1 &1115152154
 GameObject:
   m_ObjectHideFlags: 0
