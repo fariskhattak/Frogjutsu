@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Assassin : Player
 {
-    public float additionalMoveSpeed = 3f;
+    public float assassinMoveSpeed = 10f;
     public GameObject attackPoint;
     public float attackRadius;
     void Start()
     {
-        playerStats.moveSpeed += additionalMoveSpeed;
+        playerStats.moveSpeed = assassinMoveSpeed;
         PlayerManager.Instance.playerStats = playerStats;
     }
     // public override void Run(float dirX)

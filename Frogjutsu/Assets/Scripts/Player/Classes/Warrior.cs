@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Warrior : Player
 {
-    public float additionalJumpForce = 3f;
+    public float warriorJumpForce = 17f;
     public GameObject attackPoint;
     public float attackRadius;
     void Start()
     {
-        playerStats.jumpForce += additionalJumpForce;
+        playerStats.jumpForce = warriorJumpForce;
         playerStats.damage = 20;
     }
     // public override void Jump()
