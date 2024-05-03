@@ -7,6 +7,7 @@ public class Ranger : Player
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private string arrowTag;
+    [SerializeField] private AudioClip attackSound;
     private GameObject[] arrows;
     private float cooldownTimer;
 
@@ -35,6 +36,7 @@ public class Ranger : Player
 
     public void Shoot()
     {
+        SoundManager.instance.PlaySound(attackSound);
         int arrowNum = FindArrow();
         Debug.Log(arrowNum);
         arrows[arrowNum].transform.position = firePoint.position;

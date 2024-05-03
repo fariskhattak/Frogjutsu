@@ -7,6 +7,7 @@ public class Warrior : Player
     public float warriorJumpForce = 17f;
     public GameObject attackPoint;
     public float attackRadius;
+[SerializeField] private AudioClip attackSound;
     void Start()
     {
         playerStats.jumpForce = warriorJumpForce;
@@ -20,6 +21,7 @@ public class Warrior : Player
     // Used for melee attacks
     public void MeleeAttack()
     {
+        SoundManager.instance.PlaySound(attackSound);
         if (attackPoint != null)
         {
             Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRadius, enemies);

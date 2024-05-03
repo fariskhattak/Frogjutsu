@@ -9,6 +9,7 @@ public class Mage : Player
     [SerializeField] private GameObject magicAmmoPrefab; // Prefab of the arrow object
     private List<GameObject> magicAmmo = new List<GameObject>(); // Use a list instead of an array
     [SerializeField] private int totalAmmo = 10;
+    [SerializeField] private AudioClip attackSound;
     private float cooldownTimer;
 
     void Start()
@@ -37,6 +38,7 @@ public class Mage : Player
 
     public void Shoot()
     {
+        SoundManager.instance.PlaySound(attackSound);
         int magicNum = FindMagicAmmo();
         Debug.Log(magicNum);
         magicAmmo[magicNum].transform.position = firePoint.position;
