@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     
     public GameObject statsMenuUI;
     public GameObject backButton;
+    public GameObject infoMenuUI;
     PlayerManager playerManager;
     Player player;
 
@@ -32,6 +33,7 @@ public class UIManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         exitMenuUI.SetActive(false);
         statsMenuUI.SetActive(false);
+        infoMenuUI.SetActive(false);
         playerManager = PlayerManager.Instance;
         characterDisplayUI.sprite = characterSprites[playerManager.characterIndex];
         characterProfileBorder.color = characterColors[playerManager.characterIndex];
@@ -94,6 +96,18 @@ public class UIManager : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         exitMenuUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(noButton);
+    }
+
+    public void OpenMainMenu()
+    {
+        infoMenuUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(noButton);
+    }
+
+    public void OpenInfoMenu()
+    {
+        infoMenuUI.SetActive(true);
         EventSystem.current.SetSelectedGameObject(noButton);
     }
 
