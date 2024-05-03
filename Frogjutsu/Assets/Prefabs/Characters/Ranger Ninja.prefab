@@ -211,7 +211,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff56a16d233fa53488af0807a02970b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  playerStats:
+    maxHealth: 100
+    currentHealth: 0
+    maxMana: 50
+    currentMana: 0
+    moveSpeed: 7
+    damage: 10
+    defense: 10
+    jumpForce: 14
   lifeCounter: 3
   lifeText: {fileID: 0}
   enemies:
@@ -220,6 +228,7 @@ MonoBehaviour:
   attackCooldown: 0
   firePoint: {fileID: 6846518213525229200}
   arrowTag: Arrow
+  attackSound: {fileID: 8300000, guid: 47fce77506efc2e4193a57b84f77e853, type: 3}
 --- !u!1 &5690205842750308729
 GameObject:
   m_ObjectHideFlags: 0

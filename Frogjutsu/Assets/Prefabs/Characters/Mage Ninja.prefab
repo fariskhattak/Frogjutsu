@@ -242,8 +242,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a9c5a878e49914f9878b18ce63ebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
-  deathCounter: 0
+  playerStats:
+    maxHealth: 100
+    currentHealth: 0
+    maxMana: 50
+    currentMana: 0
+    moveSpeed: 7
+    damage: 10
+    defense: 10
+    jumpForce: 14
+  lifeCounter: 3
+  lifeText: {fileID: 0}
   enemies:
     serializedVersion: 2
     m_Bits: 64
@@ -251,3 +260,4 @@ MonoBehaviour:
   firePoint: {fileID: 3191607715601549615}
   magicAmmoPrefab: {fileID: 8642143531569525162, guid: c293e5f91f61c884aae5b8f5b348ae18, type: 3}
   totalAmmo: 10
+  attackSound: {fileID: 8300000, guid: 47fce77506efc2e4193a57b84f77e853, type: 3}
