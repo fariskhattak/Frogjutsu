@@ -257,6 +257,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   deathSound: {fileID: 8300000, guid: 7cefbfbc7be51b2409392049f4efd783, type: 3}
+  jumpSound: {fileID: 8300000, guid: 7412e97a025333441a515f457cba6d8c, type: 3}
+  runSound: {fileID: 8300000, guid: e3175374a9cb1934d878ad09962b02b9, type: 3}
   attackCooldown: 1
   firePoint: {fileID: 3191607715601549615}
   magicAmmoPrefab: {fileID: 8642143531569525162, guid: c293e5f91f61c884aae5b8f5b348ae18, type: 3}

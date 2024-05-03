@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private Quaternion startRotation;
     protected PlayerMovement playerMovement;
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip jumpSound;
 
     void Awake()
     {
@@ -106,6 +107,7 @@ public class Player : MonoBehaviour
 
     public virtual void Jump()
     {
+        SoundManager.instance.PlaySound(jumpSound);
         rb.velocity = new Vector2(rb.velocity.x, playerStats.jumpForce);
         // Debug.Log(jumpForce);
     }
