@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private Vector3 startPosition;
     private Quaternion startRotation;
     protected PlayerMovement playerMovement;
+    [SerializeField] private AudioClip deathSound;
 
     void Awake()
     {
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour
     {
         if (isAlive)
         {
+            SoundManager.instance.PlaySound(deathSound);
             anim.SetTrigger("hit");
             playerStats.TakeDamage(damage);
             healthBar.SetHealth(playerStats.currentHealth);
@@ -184,6 +186,7 @@ public class Player : MonoBehaviour
     {
         if (collider.gameObject.tag == "Death Platform")
         {
+            SoundManager.instance.PlaySound(deathSound);
             Die();
         }
     }

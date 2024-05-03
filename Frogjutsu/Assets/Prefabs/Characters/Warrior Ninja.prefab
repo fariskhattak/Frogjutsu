@@ -256,6 +256,7 @@ MonoBehaviour:
   enemies:
     serializedVersion: 2
     m_Bits: 64
+  deathSound: {fileID: 8300000, guid: 7cefbfbc7be51b2409392049f4efd783, type: 3}
   warriorJumpForce: 17
   attackPoint: {fileID: 2700484457330040754}
   attackRadius: 0.65

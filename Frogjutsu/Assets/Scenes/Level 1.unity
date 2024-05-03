@@ -15493,6 +15493,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3280689707509148227, guid: d32b9f1ac32176444842bb47637529da, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7cefbfbc7be51b2409392049f4efd783, type: 3}
+    - target: {fileID: 3280689707509148227, guid: d32b9f1ac32176444842bb47637529da, type: 3}
       propertyPath: attackSound
       value: 
       objectReference: {fileID: 8300000, guid: 47fce77506efc2e4193a57b84f77e853, type: 3}

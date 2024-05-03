@@ -225,6 +225,7 @@ MonoBehaviour:
   enemies:
     serializedVersion: 2
     m_Bits: 64
+  deathSound: {fileID: 8300000, guid: 7cefbfbc7be51b2409392049f4efd783, type: 3}
   assassinMoveSpeed: 10
   attackPoint: {fileID: 6095824185198130728}
   attackRadius: 0.5
