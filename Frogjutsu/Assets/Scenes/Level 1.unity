@@ -1782,6 +1782,101 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &812566121
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.2249124
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774345670564079123, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: m_Name
+      value: MushroomEnemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 812566123}
+  m_SourcePrefab: {fileID: 100100000, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+--- !u!1 &812566122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+  m_PrefabInstance: {fileID: 812566121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &812566123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812566122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f848fa0fe46f284ca3e7be09448175a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1
+  range: -1.5
+  colliderDistance: 0.2
+  damage: 2
+  boxCollider: {fileID: 812566124}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!61 &812566124 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2109139177966493357, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+  m_PrefabInstance: {fileID: 812566121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &818507269
 GameObject:
   m_ObjectHideFlags: 0
@@ -15474,7 +15569,7 @@ SpriteRenderer:
   m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &2026545716
@@ -16792,4 +16887,5 @@ SceneRoots:
   - {fileID: 1362013926}
   - {fileID: 1845766688600764147}
   - {fileID: 167637092}
+  - {fileID: 812566121}
   - {fileID: 779425390}
