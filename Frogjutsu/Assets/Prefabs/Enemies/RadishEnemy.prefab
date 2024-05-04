@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5928546444849498715}
   - component: {fileID: 5528143173194525971}
   - component: {fileID: 6343686702973500986}
+  - component: {fileID: 1456654369686032953}
   m_Layer: 0
   m_Name: RadishEnemy
   m_TagString: Enemy
@@ -165,3 +166,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a0c946dc22d1744a4668463ffbd835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1456654369686032953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536602266067762043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2368c7fc0f4a46340b87b2ca88b49932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  currentHealth: 0
+  painSound: {fileID: 8300000, guid: 81e0084bd364fa04ebd8e1a7de463d4c, type: 3}
