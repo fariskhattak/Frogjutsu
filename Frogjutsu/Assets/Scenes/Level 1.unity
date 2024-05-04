@@ -585,6 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   currentHealth: 0
+  painSound: {fileID: 0}
 --- !u!114 &228396680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,6 +1353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   currentHealth: 0
+  painSound: {fileID: 0}
 --- !u!50 &738324498
 Rigidbody2D:
   serializedVersion: 4
@@ -3503,6 +3505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 75
   currentHealth: 0
+  painSound: {fileID: 0}
 --- !u!95 &1505944217
 Animator:
   serializedVersion: 5
@@ -15075,6 +15078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   currentHealth: 0
+  painSound: {fileID: 0}
 --- !u!50 &1644343520
 Rigidbody2D:
   serializedVersion: 4
