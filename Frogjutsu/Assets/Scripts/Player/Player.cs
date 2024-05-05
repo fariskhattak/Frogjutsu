@@ -90,8 +90,8 @@ public class Player : MonoBehaviour
 
         if (lifeCounter <= 0)
         {
-            playerStats = new Stats();
-            SceneManager.LoadSceneAsync("MainMenu");
+            PlayerManager.Instance.playerStats = new Stats();
+            SceneManager.LoadSceneAsync("Game Over");
         }
         else
         {

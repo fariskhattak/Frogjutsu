@@ -15,7 +15,7 @@ public class Mage : Player
     void Start()
     {
         playerStats.damage = 40;
-        PlayerManager.Instance.playerStats = playerStats;
+        // PlayerManager.Instance.playerStats = playerStats;
         InitMagicAmmo();
     }
 

@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     private CameraController cameraController;
 
     // List of scenes where the player should not be instantiated
-    private HashSet<string> nonPlayerScenes = new HashSet<string> { "MainMenu", "Level Selection", "CharacterSelect"};
+    private HashSet<string> nonPlayerScenes = new HashSet<string> { "MainMenu", "Level Selection", "CharacterSelect", "Game Over"};
 
     private void Awake()
     {
