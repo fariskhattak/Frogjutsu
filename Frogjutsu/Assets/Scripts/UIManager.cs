@@ -25,41 +25,56 @@ public class UIManager : MonoBehaviour
     
     public GameObject statsMenuUI;
     public GameObject backButton;
-    public GameObject infoMenuUI;
     PlayerManager playerManager;
     Player player;
 
     void Start () {
-        pauseMenuUI.SetActive(false);
-        exitMenuUI.SetActive(false);
-        statsMenuUI.SetActive(false);
-        infoMenuUI.SetActive(false);
-        playerManager = PlayerManager.Instance;
-        characterDisplayUI.sprite = characterSprites[playerManager.characterIndex];
-        characterProfileBorder.color = characterColors[playerManager.characterIndex];
-        characterDisplayUI.enabled = true; // Make sure the image is enabled
-
-        characterStatsProfile.sprite = characterSprites[playerManager.characterIndex];
-        characterStatsProfileBorder.color = characterColors[playerManager.characterIndex];
-
-        player = FindObjectOfType<Player>();
+        SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to the scene loaded event
+        InitializeUI();
     }
 
     void Update () {
-        if (Input.GetButtonDown("Pause")) {
+        if (IsLevelScene() && Input.GetButtonDown("Pause"))
+        {
             if (paused)
             {
                 Resume();
-            } else 
+            }
+            else
             {
                 Pause();
             }
         }
     }
 
+    void InitializeUI()
+    {
+        playerManager = PlayerManager.Instance;
+        player = FindAnyObjectByType<Player>();
+
+        pauseMenuUI.SetActive(false);
+        exitMenuUI.SetActive(false);
+        statsMenuUI.SetActive(false);
+        
+        characterDisplayUI.sprite = characterSprites[playerManager.characterIndex];
+        characterProfileBorder.color = characterColors[playerManager.characterIndex];
+        characterDisplayUI.enabled = true;
+        characterStatsProfile.sprite = characterSprites[playerManager.characterIndex];
+        characterStatsProfileBorder.color = characterColors[playerManager.characterIndex];
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (IsLevelScene()) {
+            InitializeUI();
+        }
+    }
+
     public void Resume () 
     {
         pauseMenuUI.SetActive(false);
+        statsMenuUI.SetActive(false);
+        exitMenuUI.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
         player.GetComponent<PlayerMovement>().enabled = true;
@@ -99,18 +114,6 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(noButton);
     }
 
-    public void OpenMainMenu()
-    {
-        infoMenuUI.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(noButton);
-    }
-
-    public void OpenInfoMenu()
-    {
-        infoMenuUI.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(noButton);
-    }
-
     public void OpenStatsMenu()
     {
         pauseMenuUI.SetActive(false);
@@ -121,5 +124,24 @@ public class UIManager : MonoBehaviour
         statsNumbers[3].text = "" + (int) playerManager.playerStats.moveSpeed;
         statsNumbers[4].text = "" + (int) playerManager.playerStats.maxMana;
         EventSystem.current.SetSelectedGameObject(backButton);
+    }
+
+    bool IsLevelScene()
+    {
+        // Define the names of your level scenes here
+        string[] levelScenes = { "Level 1", "Level 2", "Level 3", "Level 4" }; // Add your level scene names here
+
+        // Get the current scene name
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        // Check if the current scene is a level scene
+        foreach (string levelScene in levelScenes)
+        {
+            if (currentScene.Equals(levelScene))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

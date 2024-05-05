@@ -16,8 +16,9 @@ public class PlayerMovement : MonoBehaviour
 
     private enum MovementState { idle, running, jumping, falling }
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Debug.Log("Player Movement is now awake!");
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();

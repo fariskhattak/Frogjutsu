@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("Player is now awake!");
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
@@ -89,7 +90,8 @@ public class Player : MonoBehaviour
 
         if (lifeCounter <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            playerStats = new Stats();
+            SceneManager.LoadSceneAsync("MainMenu");
         }
         else
         {

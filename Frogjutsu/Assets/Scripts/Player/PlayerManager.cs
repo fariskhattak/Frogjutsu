@@ -56,7 +56,6 @@ public class PlayerManager : MonoBehaviour
 
     private void InstantiatePlayer()
     {
-        
         if (currentPlayer == null)
         {
             characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
@@ -91,6 +90,7 @@ public class PlayerManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("New scene loaded: " + scene.name);
         if (!nonPlayerScenes.Contains(scene.name)) {
             InstantiatePlayer();
             Debug.Log("Instantiated player, Current Health is: " + playerStats.currentHealth);

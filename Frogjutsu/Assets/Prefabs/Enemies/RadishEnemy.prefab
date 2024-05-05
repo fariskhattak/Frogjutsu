@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5528143173194525971}
   - component: {fileID: 6343686702973500986}
   - component: {fileID: 1456654369686032953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RadishEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

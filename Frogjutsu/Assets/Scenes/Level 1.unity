@@ -571,21 +571,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
   m_PrefabInstance: {fileID: 8866283196539981101}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &228396679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228396673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2368c7fc0f4a46340b87b2ca88b49932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  currentHealth: 0
-  painSound: {fileID: 0}
 --- !u!114 &228396680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,9 +1299,6 @@ PrefabInstance:
       addedObject: {fileID: 738324498}
     - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 738324497}
-    - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 738324496}
   m_SourcePrefab: {fileID: 100100000, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
 --- !u!1 &738324495 stripped
@@ -1339,21 +1321,6 @@ MonoBehaviour:
   pointA: {fileID: 776827181}
   pointB: {fileID: 1498707316}
   speed: 2
---- !u!114 &738324497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738324495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2368c7fc0f4a46340b87b2ca88b49932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  currentHealth: 0
-  painSound: {fileID: 0}
 --- !u!50 &738324498
 Rigidbody2D:
   serializedVersion: 4
@@ -15039,9 +15006,6 @@ PrefabInstance:
       addedObject: {fileID: 1644343520}
     - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1644343519}
-    - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1644343518}
   m_SourcePrefab: {fileID: 100100000, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
 --- !u!1 &1644343517 stripped
@@ -15064,21 +15028,6 @@ MonoBehaviour:
   pointA: {fileID: 1038406791}
   pointB: {fileID: 1019391227}
   speed: 2
---- !u!114 &1644343519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644343517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2368c7fc0f4a46340b87b2ca88b49932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  currentHealth: 0
-  painSound: {fileID: 0}
 --- !u!50 &1644343520
 Rigidbody2D:
   serializedVersion: 4
@@ -16902,9 +16851,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
       insertIndex: 3
       addedObject: {fileID: 228396686}
-    - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 228396679}
     - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 228396680}
