@@ -263,7 +263,7 @@ MonoBehaviour:
   firePoint: {fileID: 3191607715601549615}
   magicAmmoPrefab: {fileID: 8642143531569525162, guid: c293e5f91f61c884aae5b8f5b348ae18, type: 3}
   manaCostPerShot: 10
-  manaRegenAmount: 1
+  manaRegenAmount: 5
   totalAmmo: 10
   attackSound: {fileID: 8300000, guid: 47fce77506efc2e4193a57b84f77e853, type: 3}
   manaRegenCooldown: 1

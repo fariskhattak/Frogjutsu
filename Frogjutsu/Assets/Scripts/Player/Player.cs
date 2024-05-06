@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public LayerMask enemies;
     private Vector3 startPosition;
     private Quaternion startRotation;
+    private Vector3 respawnPosition;
     protected PlayerMovement playerMovement;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip jumpSound;
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
 
         startPosition = transform.position;
         startRotation = transform.rotation;
+        respawnPosition = transform.position;
         isAlive = true;
 
         playerStats = PlayerManager.Instance.playerStats;
@@ -48,7 +50,8 @@ public class Player : MonoBehaviour
 
     public virtual void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        bool attacking = anim.GetBool("isAttacking");
+        if (Input.GetButtonDown("Fire1") && !attacking)
         {
             Debug.Log("Player used attack button");
             StartAttack();
@@ -97,7 +100,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Resetting Player");
             anim.SetTrigger("respawn"); // Assuming you have a reset animation or logic
-            transform.position = startPosition;
+            transform.position = respawnPosition;
             transform.rotation = startRotation;
             healthBar.SetHealth(playerStats.maxHealth);
             manaBar.SetMana(playerStats.maxMana);
@@ -183,6 +186,11 @@ public class Player : MonoBehaviour
         {
             SoundManager.instance.PlaySound(deathSound);
             Die();
+        }
+        if (collider.gameObject.tag == "Checkpoint")
+        {
+            Debug.Log("Passed checkpoint");
+            respawnPosition = collider.gameObject.transform.position;
         }
     }
 

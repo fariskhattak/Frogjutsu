@@ -13,6 +13,7 @@ TagManager:
   - Selected Character Image
   - Life Counter
   - Level Sewer
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

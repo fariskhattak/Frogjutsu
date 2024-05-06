@@ -31,6 +31,11 @@ public class BasicProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        // Ignore collision with players or other projectiles
+        if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Arrow" || collider.gameObject.tag == "Checkpoint")
+        {
+            return;
+        }
         hit = true;
         // Check if the object has an animator component
         boxCollider.enabled = false;
