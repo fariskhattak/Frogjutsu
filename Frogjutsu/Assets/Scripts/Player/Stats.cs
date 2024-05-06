@@ -11,6 +11,7 @@ public class Stats
     public float damage;
     public float defense;
     public float jumpForce;
+    public int unlockedLevels;
 
     public Stats()
     {
@@ -20,6 +21,7 @@ public class Stats
         damage = 10f;
         defense = 10f;
         jumpForce = 14f;
+        unlockedLevels = 1;
     }
 
     public Stats(int maxHealth, int maxMana, float moveSpeed, float damage, float defense, float jumpForce)
@@ -32,10 +34,12 @@ public class Stats
         this.damage = damage;
         this.defense = defense;
         this.jumpForce = jumpForce;
+        unlockedLevels = 1;
     }
 
     public void DeathReset()
     {
+        Debug.Log("Death Reset on Player");
         currentHealth = maxHealth;
         currentMana = maxMana;
     }
@@ -58,5 +62,19 @@ public class Stats
     {
         currentMana += restoreAmount;
         currentMana = Mathf.Min(currentMana, maxMana);
+    }
+
+    public void PrintStats()
+    {
+        // Log each variable to the console
+        Debug.Log($"Max Health: {maxHealth}");
+        Debug.Log($"Current Health: {currentHealth}");
+        Debug.Log($"Max Mana: {maxMana}");
+        Debug.Log($"Current Mana: {currentMana}");
+        Debug.Log($"Move Speed: {moveSpeed}");
+        Debug.Log($"Damage: {damage}");
+        Debug.Log($"Defense: {defense}");
+        Debug.Log($"Jump Force: {jumpForce}");
+        Debug.Log($"Unlocked Levels: {unlockedLevels}");
     }
 }

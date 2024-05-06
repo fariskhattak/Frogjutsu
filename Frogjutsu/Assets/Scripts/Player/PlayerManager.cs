@@ -20,6 +20,8 @@ public class PlayerManager : MonoBehaviour
     // List of scenes where the player should not be instantiated
     private HashSet<string> nonPlayerScenes = new HashSet<string> { "MainMenu", "Level Selection", "CharacterSelect", "Game Over"};
 
+    public HashSet<string> levelScenes = new HashSet<string> { "Level 1", "Level 2", "Level 3", "Level 4"};
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -91,6 +93,7 @@ public class PlayerManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("New scene loaded: " + scene.name);
+        playerStats.PrintStats();
         if (!nonPlayerScenes.Contains(scene.name)) {
             InstantiatePlayer();
             Debug.Log("Instantiated player, Current Health is: " + playerStats.currentHealth);

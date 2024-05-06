@@ -151,38 +151,29 @@ public class Player : MonoBehaviour
                 Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
 
                 // Apply knockback force to the player
-                // rb.velocity = knockbackDirection * knockbackForce;
                 rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
 
                 Debug.Log("Knockback direction: " + knockbackDirection);
                 Debug.Log("Knockback force: " + (knockbackDirection * knockbackForce));
-
-                // transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-
-                // Vector2 difference = (transform.position - collision.transform.position).normalized;
-                // Vector2 force = difference * knockbackForce;
-                // Vector2 horizontal = new Vector2(force.x, 0);
-                // Vector2 vertical = new Vector2(0, force.y);
-                // rb.AddForce(horizontal, ForceMode2D.Impulse);
-                // rb.AddForce(vertical, ForceMode2D.Impulse);
-                // // rb.AddForce(force, ForceMode2D.Impulse); //if you don't want to take into consideration enemy's mass then use ForceMode.VelocityChange
-                // Debug.Log("Knockback direction: " + difference);
-                // Debug.Log("Knockback force: " + force);
-
-                // Vector2 difference = (transform.position - collision.transform.position).normalized;
-                // Vector2 force = difference * knockbackForce;
-                // Vector2 horizontalForce = new Vector2(force.x, 0); // Keep only horizontal component
-                // rb.AddForce(horizontalForce, ForceMode2D.Impulse);
-
-                // rb.velocity = Vector2.zero;
-                // transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-
-                // Vector2 horizontalForce = new Vector2(10f, 0); // Example force magnitude
-                // rb.AddForce(horizontalForce, ForceMode2D.Impulse);
-                // Debug.Log("Force Applied: " + horizontalForce);
-
-
             }
+        }
+        if (collision.gameObject.tag == "Level Sewer")
+        {
+            // Get the active scene's name
+            string activeSceneName = SceneManager.GetActiveScene().name;
+            List<string> levelList = new List<string>(PlayerManager.Instance.levelScenes);
+            // Find the index of the active scene in the list
+            int levelNumber = levelList.IndexOf(activeSceneName) + 1;
+            Debug.Log("Active Scene is: " + activeSceneName);
+            Debug.Log("Level Number is: " + levelNumber);
+            Debug.Log("Unlocked Levels Count is: " + playerStats.unlockedLevels);
+            if (levelNumber == playerStats.unlockedLevels)
+            {
+                playerStats.unlockedLevels++;
+                Debug.Log("Unlocked Levels Count is updated to: " + playerStats.unlockedLevels);
+                Debug.Log("PlayerManager Instance Unlocked Levels Count is updated to: " + PlayerManager.Instance.playerStats.unlockedLevels);
+            }
+            SceneManager.LoadScene("Level Selection");
         }
     }
 
