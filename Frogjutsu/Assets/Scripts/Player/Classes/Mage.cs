@@ -12,7 +12,7 @@ public class Mage : Player
     [SerializeField] private int totalAmmo = 10;
     [SerializeField] private AudioClip attackSound;
     private float cooldownTimer;
-    [SerializeField] private float manaRegenCooldown = 1f; // Time interval between mana regen
+    [SerializeField] private float manaRegenCooldown = 0.5f; // Time interval between mana regen
     private float manaRegenTimer;
 
     void Start()
