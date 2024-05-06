@@ -12,6 +12,7 @@ TagManager:
   - ManaBar
   - Selected Character Image
   - Life Counter
+  - Level Sewer
   layers:
   - Default
   - TransparentFX

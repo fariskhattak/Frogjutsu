@@ -11,7 +11,7 @@ public class Assassin : Player
     void Start()
     {
         playerStats.moveSpeed = assassinMoveSpeed;
-        PlayerManager.Instance.playerStats = playerStats;
+        // PlayerManager.Instance.playerStats = playerStats;
     }
     // public override void Run(float dirX)
     // {
