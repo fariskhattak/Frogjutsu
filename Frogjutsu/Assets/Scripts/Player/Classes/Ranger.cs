@@ -13,7 +13,8 @@ public class Ranger : Player
 
     void Start()
     {
-        playerStats.damage = 20;
+        playerStats = playerStats.BaseRangerStats();
+        PlayerManager.Instance.playerStats = playerStats;
         InitArrows();
     }
 

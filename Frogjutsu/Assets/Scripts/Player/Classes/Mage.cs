@@ -17,7 +17,8 @@ public class Mage : Player
 
     void Start()
     {
-        playerStats.damage = 40;
+        playerStats = playerStats.BaseMageStats();
+        PlayerManager.Instance.playerStats = playerStats;
         InitMagicAmmo();
     }
 
@@ -46,9 +47,6 @@ public class Mage : Player
         if (playerStats.currentMana >= manaCostPerShot)
         {
             base.StartAttack();
-            playerStats.currentMana -= manaCostPerShot;
-            manaBar.SetMana(playerStats.currentMana);
-            cooldownTimer = 0;
         }
         else
         {
@@ -58,6 +56,9 @@ public class Mage : Player
 
     public void Shoot()
     {
+        playerStats.currentMana -= manaCostPerShot;
+        manaBar.SetMana(playerStats.currentMana);
+        cooldownTimer = 0;
         SoundManager.instance.PlaySound(attackSound);
         int magicNum = FindMagicAmmo();
         magicAmmo[magicNum].transform.position = firePoint.position;

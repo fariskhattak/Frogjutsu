@@ -11,7 +11,7 @@ public class Stats
     public float damage;
     public float defense;
     public float jumpForce;
-    public int unlockedLevels;
+    public int unlockedLevels = 1;
 
     public Stats()
     {
@@ -35,6 +35,39 @@ public class Stats
         this.defense = defense;
         this.jumpForce = jumpForce;
         unlockedLevels = 1;
+    }
+
+    public Stats(int maxHealth, int maxMana, float moveSpeed, float damage, float defense, float jumpForce, int _unlockedLevels)
+    {
+        this.maxHealth = maxHealth;
+        this.currentHealth = maxHealth; // Initialize current health to max by default
+        this.maxMana = maxMana;
+        this.currentMana = maxMana; // Initialize current mana to max by default
+        this.moveSpeed = moveSpeed;
+        this.damage = damage;
+        this.defense = defense;
+        this.jumpForce = jumpForce;
+        unlockedLevels = _unlockedLevels;
+    }
+
+    public Stats BaseWarriorStats()
+    {
+        return new Stats(120, 20, 7, 20, 10, 17, unlockedLevels);
+    }
+
+        public Stats BaseMageStats()
+    {
+        return new Stats(70, 50, 5, 40, 7, 14, unlockedLevels);
+    }
+
+        public Stats BaseRangerStats()
+    {
+        return new Stats(100, 30, 7, 20, 7, 14, unlockedLevels);
+    }
+
+        public Stats BaseAssassinStats()
+    {
+        return new Stats(80, 40, 10, 15, 5, 14, unlockedLevels);
     }
 
     public void DeathReset()

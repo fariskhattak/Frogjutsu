@@ -123,6 +123,12 @@ public class Player : MonoBehaviour
         // Debug.Log(moveSpeed);
     }
 
+    public virtual void Sprint(float dirX)
+    {
+        rb.velocity = new Vector2(dirX * playerStats.moveSpeed * 2, rb.velocity.y);
+        
+    }
+
     public virtual void EndAttack()
     {
         anim.SetBool("isAttacking", false);
