@@ -18,13 +18,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Enemy
   - Ground
-  - Sewer
   - 
+  - Sewer
   - 
   - 
   - 
