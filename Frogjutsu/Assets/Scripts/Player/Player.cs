@@ -58,13 +58,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (isAlive)
         {
             SoundManager.instance.PlaySound(deathSound);
             anim.SetTrigger("hit");
-            playerStats.TakeDamage(damage);
+            playerStats.TakeDamage(Mathf.RoundToInt(damage)); // Convert float to int
             healthBar.SetHealth(playerStats.currentHealth);
             if (playerStats.currentHealth <= 0)
             {
@@ -117,11 +117,33 @@ public class Player : MonoBehaviour
         // Debug.Log(jumpForce);
     }
 
+    private bool iceBlockSpeedBoosted = false; // Add this variable
+
     public virtual void Run(float dirX)
     {
-        rb.velocity = new Vector2(dirX * playerStats.moveSpeed, rb.velocity.y);
+        if (!iceBlockSpeedBoosted) // Check if the player's speed has been boosted by an ice block
+        {
+            rb.velocity = new Vector2(dirX * playerStats.moveSpeed, rb.velocity.y);
+        }
         // Debug.Log(moveSpeed);
     }
+
+    public void SetIceBlockSpeedBoosted(bool boosted)
+    {
+        iceBlockSpeedBoosted = boosted;
+    }
+    public void DisableMovementForDuration(float duration)
+    {
+        StartCoroutine(DisableMovementCoroutine(duration));
+    }
+
+    private IEnumerator DisableMovementCoroutine(float duration)
+    {
+        playerMovement.enabled = false;
+        yield return new WaitForSeconds(duration);
+        playerMovement.enabled = true;
+    }
+
 
     public virtual void EndAttack()
     {

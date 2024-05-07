@@ -34,7 +34,6 @@ public class RockHeadEnemy : MonoBehaviour
     {
         isSlamming = true;
 
-        Debug.Log("Warning: Rock Head is about to slam!");
 
         yield return new WaitForSeconds(warningDuration);
 
@@ -42,7 +41,7 @@ public class RockHeadEnemy : MonoBehaviour
         float colliderBottom = collider.bounds.min.y;
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, colliderBottom), Vector2.down, Mathf.Infinity, LayerMask.GetMask("Ground"));
         float offset = collider.bounds.extents.y; // Half of the height of the collider
-        float targetY = hit.point.y + offset; // Adjust the target Y position to be above the ground by the Rock Head's height
+        float targetY = hit.point.y + offset + 0.38f; // Adjust the target Y position to be above the ground by the Rock Head's height, plus a slight offset
         Vector3 targetPosition = new Vector3(hit.point.x, targetY, transform.position.z); // Maintain the same X and Z coordinates
 
 
