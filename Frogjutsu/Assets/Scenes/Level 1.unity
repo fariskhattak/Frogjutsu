@@ -2679,7 +2679,7 @@ GameObject:
   - component: {fileID: 880438470}
   - component: {fileID: 880438469}
   - component: {fileID: 880438468}
-  - component: {fileID: 880438467}
+  - component: {fileID: 880438472}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -2687,22 +2687,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &880438467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880438466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27084b6c2d2ede3439afaa131b22df9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  enemies:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!58 &880438468
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2826,12 +2810,26 @@ Transform:
   m_GameObject: {fileID: 880438466}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -24.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1577307421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &880438472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880438466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de75679e9ddb1d142b437e993089aaeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  resetTime: 5
 --- !u!1001 &889247748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3581,7 +3579,7 @@ Transform:
   m_GameObject: {fileID: 1147351589}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3, y: -0.13, z: -0.12209462}
+  m_LocalPosition: {x: -1.36, y: -0.01, z: -0.12209462}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4757,6 +4755,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3195132905320226177, guid: c5ce4245ed0326e40bdb0fbaeab85c53, type: 3}
   m_PrefabInstance: {fileID: 1522580180}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1577307420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577307421}
+  m_Layer: 0
+  m_Name: FireballsHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1577307421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577307420}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -1.36, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 880438471}
+  m_Father: {fileID: 444680739}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1595370166
 GameObject:
   m_ObjectHideFlags: 0
@@ -16929,6 +16959,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7884284655178353420, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1147351590}
+    - targetCorrespondingSourceObject: {fileID: 7884284655178353420, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1577307421}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5331303772006745133, guid: c943fa3d67fd8484ebb1593d86df7001, type: 3}
       insertIndex: -1
@@ -18076,4 +18109,3 @@ SceneRoots:
   - {fileID: 779425390}
   - {fileID: 820153308922544825}
   - {fileID: 1208877848}
-  - {fileID: 880438471}
