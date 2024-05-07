@@ -1,19 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Mage : Player
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject magicAmmoPrefab; // Prefab of the arrow object
-    private List<GameObject> magicAmmo = new List<GameObject>(); // Use a list instead of an array
+    [SerializeField] private GameObject magicAmmoPrefab;
+    [SerializeField] private int manaCostPerShot = 10; // Add the mana cost per shot
+    [SerializeField] private int manaRegenAmount = 1; // Mana to regenerate per tick
+    private List<GameObject> magicAmmo = new List<GameObject>();
     [SerializeField] private int totalAmmo = 10;
+    [SerializeField] private AudioClip attackSound;
     private float cooldownTimer;
+    [SerializeField] private float manaRegenCooldown = 0.5f; // Time interval between mana regen
+    private float manaRegenTimer;
 
     void Start()
     {
-        playerStats.damage = 40;
+        playerStats = playerStats.BaseMageStats();
         PlayerManager.Instance.playerStats = playerStats;
         InitMagicAmmo();
     }
@@ -26,27 +30,44 @@ public class Mage : Player
         }
 
         cooldownTimer += Time.deltaTime;
+
+        // Regenerate mana over time
+        manaRegenTimer += Time.deltaTime;
+        if (manaRegenTimer >= manaRegenCooldown)
+        {
+            playerStats.RestoreMana(manaRegenAmount);
+            manaBar.SetMana(playerStats.currentMana);
+            Debug.Log("Mage current mana: " + playerStats.currentMana);
+            manaRegenTimer = 0f;
+        }
     }
 
     public override void StartAttack()
     {
-        base.StartAttack();
-        cooldownTimer = 0;
-
+        if (playerStats.currentMana >= manaCostPerShot)
+        {
+            base.StartAttack();
+        }
+        else
+        {
+            Debug.Log("Not enough mana to shoot.");
+        }
     }
 
     public void Shoot()
     {
+        playerStats.currentMana -= manaCostPerShot;
+        manaBar.SetMana(playerStats.currentMana);
+        cooldownTimer = 0;
+        SoundManager.instance.PlaySound(attackSound);
         int magicNum = FindMagicAmmo();
-        Debug.Log(magicNum);
         magicAmmo[magicNum].transform.position = firePoint.position;
         magicAmmo[magicNum].GetComponent<BasicMagic>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
     private void InitMagicAmmo()
     {
-        // Instantiate new ammo and add them to the list
-        for (int i = 0; i < totalAmmo; i++) // Example: instantiate 10 ammo
+        for (int i = 0; i < totalAmmo; i++)
         {
             GameObject newMagic = Instantiate(magicAmmoPrefab, transform.position, Quaternion.identity);
             newMagic.GetComponent<BasicMagic>().SetDamage(playerStats.damage);

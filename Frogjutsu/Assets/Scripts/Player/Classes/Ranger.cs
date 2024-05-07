@@ -7,13 +7,15 @@ public class Ranger : Player
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private string arrowTag;
+    [SerializeField] private AudioClip attackSound;
     private GameObject[] arrows;
     private float cooldownTimer;
 
     void Start()
     {
+        playerStats = playerStats.BaseRangerStats();
+        PlayerManager.Instance.playerStats = playerStats;
         InitArrows();
-        playerStats.damage = 20;
     }
 
     public override void Update()
@@ -35,6 +37,7 @@ public class Ranger : Player
 
     public void Shoot()
     {
+        SoundManager.instance.PlaySound(attackSound);
         int arrowNum = FindArrow();
         Debug.Log(arrowNum);
         arrows[arrowNum].transform.position = firePoint.position;

@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   currentHealth: 0
+  painSound: {fileID: 8300000, guid: 81e0084bd364fa04ebd8e1a7de463d4c, type: 3}
 --- !u!114 &3010466971827749187
 MonoBehaviour:
   m_ObjectHideFlags: 0

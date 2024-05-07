@@ -23,10 +23,14 @@ public class Player : MonoBehaviour
     public LayerMask enemies;
     private Vector3 startPosition;
     private Quaternion startRotation;
+    private Vector3 respawnPosition;
     protected PlayerMovement playerMovement;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip jumpSound;
 
     void Awake()
     {
+        Debug.Log("Player is now awake!");
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
@@ -34,6 +38,7 @@ public class Player : MonoBehaviour
 
         startPosition = transform.position;
         startRotation = transform.rotation;
+        respawnPosition = transform.position;
         isAlive = true;
 
         playerStats = PlayerManager.Instance.playerStats;
@@ -45,7 +50,8 @@ public class Player : MonoBehaviour
 
     public virtual void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        bool attacking = anim.GetBool("isAttacking");
+        if (Input.GetButtonDown("Fire1") && !attacking)
         {
             Debug.Log("Player used attack button");
             StartAttack();
@@ -56,6 +62,7 @@ public class Player : MonoBehaviour
     {
         if (isAlive)
         {
+            SoundManager.instance.PlaySound(deathSound);
             anim.SetTrigger("hit");
             playerStats.TakeDamage(damage);
             healthBar.SetHealth(playerStats.currentHealth);
@@ -86,13 +93,14 @@ public class Player : MonoBehaviour
 
         if (lifeCounter <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerManager.Instance.playerStats = new Stats();
+            SceneManager.LoadSceneAsync("Game Over");
         }
         else
         {
             Debug.Log("Resetting Player");
             anim.SetTrigger("respawn"); // Assuming you have a reset animation or logic
-            transform.position = startPosition;
+            transform.position = respawnPosition;
             transform.rotation = startRotation;
             healthBar.SetHealth(playerStats.maxHealth);
             manaBar.SetMana(playerStats.maxMana);
@@ -104,6 +112,7 @@ public class Player : MonoBehaviour
 
     public virtual void Jump()
     {
+        SoundManager.instance.PlaySound(jumpSound);
         rb.velocity = new Vector2(rb.velocity.x, playerStats.jumpForce);
         // Debug.Log(jumpForce);
     }
@@ -112,6 +121,12 @@ public class Player : MonoBehaviour
     {
         rb.velocity = new Vector2(dirX * playerStats.moveSpeed, rb.velocity.y);
         // Debug.Log(moveSpeed);
+    }
+
+    public virtual void Sprint(float dirX)
+    {
+        rb.velocity = new Vector2(dirX * playerStats.moveSpeed * 2, rb.velocity.y);
+        
     }
 
     public virtual void EndAttack()
@@ -145,38 +160,29 @@ public class Player : MonoBehaviour
                 Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
 
                 // Apply knockback force to the player
-                // rb.velocity = knockbackDirection * knockbackForce;
                 rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
 
                 Debug.Log("Knockback direction: " + knockbackDirection);
                 Debug.Log("Knockback force: " + (knockbackDirection * knockbackForce));
-
-                // transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-
-                // Vector2 difference = (transform.position - collision.transform.position).normalized;
-                // Vector2 force = difference * knockbackForce;
-                // Vector2 horizontal = new Vector2(force.x, 0);
-                // Vector2 vertical = new Vector2(0, force.y);
-                // rb.AddForce(horizontal, ForceMode2D.Impulse);
-                // rb.AddForce(vertical, ForceMode2D.Impulse);
-                // // rb.AddForce(force, ForceMode2D.Impulse); //if you don't want to take into consideration enemy's mass then use ForceMode.VelocityChange
-                // Debug.Log("Knockback direction: " + difference);
-                // Debug.Log("Knockback force: " + force);
-
-                // Vector2 difference = (transform.position - collision.transform.position).normalized;
-                // Vector2 force = difference * knockbackForce;
-                // Vector2 horizontalForce = new Vector2(force.x, 0); // Keep only horizontal component
-                // rb.AddForce(horizontalForce, ForceMode2D.Impulse);
-
-                // rb.velocity = Vector2.zero;
-                // transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-
-                // Vector2 horizontalForce = new Vector2(10f, 0); // Example force magnitude
-                // rb.AddForce(horizontalForce, ForceMode2D.Impulse);
-                // Debug.Log("Force Applied: " + horizontalForce);
-
-
             }
+        }
+        if (collision.gameObject.tag == "Level Sewer")
+        {
+            // Get the active scene's name
+            string activeSceneName = SceneManager.GetActiveScene().name;
+            List<string> levelList = new List<string>(PlayerManager.Instance.levelScenes);
+            // Find the index of the active scene in the list
+            int levelNumber = levelList.IndexOf(activeSceneName) + 1;
+            Debug.Log("Active Scene is: " + activeSceneName);
+            Debug.Log("Level Number is: " + levelNumber);
+            Debug.Log("Unlocked Levels Count is: " + playerStats.unlockedLevels);
+            if (levelNumber == playerStats.unlockedLevels)
+            {
+                playerStats.unlockedLevels++;
+                Debug.Log("Unlocked Levels Count is updated to: " + playerStats.unlockedLevels);
+                Debug.Log("PlayerManager Instance Unlocked Levels Count is updated to: " + PlayerManager.Instance.playerStats.unlockedLevels);
+            }
+            SceneManager.LoadScene("Level Selection");
         }
     }
 
@@ -184,7 +190,13 @@ public class Player : MonoBehaviour
     {
         if (collider.gameObject.tag == "Death Platform")
         {
+            SoundManager.instance.PlaySound(deathSound);
             Die();
+        }
+        if (collider.gameObject.tag == "Checkpoint")
+        {
+            Debug.Log("Passed checkpoint");
+            respawnPosition = collider.gameObject.transform.position;
         }
     }
 

@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
     public float health;
     public float currentHealth;
     private Animator anim;
+    [SerializeField] private AudioClip painSound;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -27,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        SoundManager.instance.PlaySound(painSound);
         health -= damage;
     }
 

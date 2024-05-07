@@ -15,9 +15,11 @@ public class PlayerMovement : MonoBehaviour
     public float dirX = 0f;
 
     private enum MovementState { idle, running, jumping, falling }
+    public bool isSprinting;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Debug.Log("Player Movement is now awake!");
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
@@ -37,7 +39,22 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
-        player.Run(dirX);
+        if (Input.GetButtonDown("Fire2") && IsGrounded())
+        {
+            Debug.Log("Player started sprinting");
+            isSprinting = true;
+        }
+        if (Input.GetButtonUp("Fire2"))
+        {
+            Debug.Log("Player stopped sprinting");
+            isSprinting = false;
+        }
+        if (!IsGrounded())
+            isSprinting = false;
+        if (!isSprinting)
+            player.Run(dirX);
+        else
+            player.Sprint(dirX);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {

@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class Warrior : Player
 {
-    public float warriorJumpForce = 17f;
     public GameObject attackPoint;
     public float attackRadius;
+    [SerializeField] private AudioClip attackSound;
     void Start()
     {
-        playerStats.jumpForce = warriorJumpForce;
-        playerStats.damage = 20;
+        playerStats = playerStats.BaseWarriorStats();
+        PlayerManager.Instance.playerStats = playerStats;
     }
-    // public override void Jump()
-    // {
-    //     rb.velocity = new Vector2(rb.velocity.x, playerStats.jumpForce);
-    // }
 
     // Used for melee attacks
     public void MeleeAttack()
     {
+        SoundManager.instance.PlaySound(attackSound);
         if (attackPoint != null)
         {
             Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRadius, enemies);

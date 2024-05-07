@@ -12,6 +12,8 @@ TagManager:
   - ManaBar
   - Selected Character Image
   - Life Counter
+  - Level Sewer
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - UI
   - Enemy
   - Ground
-  - Player
+  - Sewer
   - 
   - 
   - 
