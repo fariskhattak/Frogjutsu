@@ -33,13 +33,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -710853046291271514}
-    m_Position: {x: 370, y: 100, z: 0}
+    m_Position: {x: 380, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5827966357425615636}
     m_Position: {x: 110, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5157373448063764650}
-    m_Position: {x: 370, y: 220, z: 0}
+    m_Position: {x: 290, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5928646805843794381}
     m_Position: {x: -130, y: -70, z: 0}
@@ -176,6 +176,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: isDead
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: rangedAttack
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
