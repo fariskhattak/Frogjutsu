@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4081229044827409172}
   - component: {fileID: 5871294459396002168}
   - component: {fileID: -1993399133801182866}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Assassin Ninja
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -199,6 +199,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   dirX: 0
+  isSprinting: 0
 --- !u!114 &-1993399133801182866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +221,7 @@ MonoBehaviour:
     damage: 10
     defense: 10
     jumpForce: 14
+    unlockedLevels: 1
   lifeCounter: 3
   lifeText: {fileID: 0}
   enemies:
@@ -227,8 +229,6 @@ MonoBehaviour:
     m_Bits: 64
   deathSound: {fileID: 8300000, guid: 7cefbfbc7be51b2409392049f4efd783, type: 3}
   jumpSound: {fileID: 8300000, guid: 7412e97a025333441a515f457cba6d8c, type: 3}
-  runSound: {fileID: 8300000, guid: e3175374a9cb1934d878ad09962b02b9, type: 3}
-  assassinMoveSpeed: 10
   attackPoint: {fileID: 6095824185198130728}
   attackRadius: 0.5
   attackSound: {fileID: 8300000, guid: 47fce77506efc2e4193a57b84f77e853, type: 3}
@@ -241,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2475013794603975111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
