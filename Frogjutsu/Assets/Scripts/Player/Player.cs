@@ -125,17 +125,17 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector2(dirX * playerStats.moveSpeed, rb.velocity.y);
         }
-        // Debug.Log(moveSpeed);
     }
     public virtual void Sprint(float dirX)
     {
         rb.velocity = new Vector2(dirX * playerStats.moveSpeed * 2, rb.velocity.y);
     }
 
-        public void SetIceBlockSpeedBoosted(bool boosted)
+    public void SetIceBlockSpeedBoosted(bool boosted)
     {
         iceBlockSpeedBoosted = boosted;
     }
+
     public void DisableMovementForDuration(float duration)
     {
         StartCoroutine(DisableMovementCoroutine(duration));

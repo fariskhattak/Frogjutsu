@@ -18,9 +18,9 @@ public class PlayerManager : MonoBehaviour
     private CameraController cameraController;
 
     // List of scenes where the player should not be instantiated
-    private HashSet<string> nonPlayerScenes = new HashSet<string> { "MainMenu", "Level Selection", "CharacterSelect", "Game Over"};
+    private HashSet<string> nonPlayerScenes = new HashSet<string> { "MainMenu", "Level Selection", "CharacterSelect", "Game Over" };
 
-    public HashSet<string> levelScenes = new HashSet<string> { "Level 1", "Level 2", "Level 3", "Level 4"};
+    public HashSet<string> levelScenes = new HashSet<string> { "Level 1", "Level 2", "Level 3", "Level 4" };
 
     private void Awake()
     {
@@ -66,6 +66,13 @@ public class PlayerManager : MonoBehaviour
             InitCameraController(currentPlayer);
             playerStats.DeathReset();
             currentPlayer.GetComponent<Player>().playerStats = playerStats;
+
+            // Pass the player's reference to the IceBlock script
+            IceBlock[] iceBlocks = FindObjectsOfType<IceBlock>();
+            foreach (IceBlock iceBlock in iceBlocks)
+            {
+                iceBlock.SetPlayer(currentPlayer.GetComponent<Player>());
+            }
         }
     }
 
@@ -94,20 +101,24 @@ public class PlayerManager : MonoBehaviour
     {
         Debug.Log("New scene loaded: " + scene.name);
         playerStats.PrintStats();
-        if (!nonPlayerScenes.Contains(scene.name)) {
+        if (!nonPlayerScenes.Contains(scene.name))
+        {
             InstantiatePlayer();
             Debug.Log("Instantiated player, Current Health is: " + playerStats.currentHealth);
-        } else {
+        }
+        else
+        {
             Debug.Log("Player not instantiated, scene is not for gameplay: " + scene.name);
             EnsurePlayerIsDestroyed();
         }
     }
 
-    private void EnsurePlayerIsDestroyed() {
-        if (currentPlayer != null) {
+    private void EnsurePlayerIsDestroyed()
+    {
+        if (currentPlayer != null)
+        {
             Destroy(currentPlayer);
             currentPlayer = null;
         }
     }
-
 }
