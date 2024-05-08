@@ -6,6 +6,13 @@ public class EnemyProjectile : Enemy
     [SerializeField] private float resetTime;
     private float lifetime;
 
+
+    void Start()
+    {
+        damage = 50; //changed damage?
+    }
+
+    
     public void ActivateProjectile()
     {
         lifetime = 0;
