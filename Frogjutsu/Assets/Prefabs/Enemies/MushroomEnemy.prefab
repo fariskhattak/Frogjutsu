@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5652280419316811833}
   - component: {fileID: 5305217736765765877}
   - component: {fileID: 3010466971827749187}
+  - component: {fileID: 2127724444695246091}
   m_Layer: 6
   m_Name: MushroomEnemy
   m_TagString: Enemy
@@ -33,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.92, y: -1.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -207,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2368c7fc0f4a46340b87b2ca88b49932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 85
   currentHealth: 0
   painSound: {fileID: 8300000, guid: 81e0084bd364fa04ebd8e1a7de463d4c, type: 3}
 --- !u!114 &3010466971827749187
@@ -222,6 +223,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35107866a7d1e264a814accd8358f6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
+  leftEdge: {fileID: 0}
+  rightEdge: {fileID: 0}
+  enemy: {fileID: 1774345670564079123}
   speed: 1.5
+  idleDuration: 2
+  anim: {fileID: 4515531312955927168}
+--- !u!114 &2127724444695246091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384936684931244026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f848fa0fe46f284ca3e7be09448175a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1.5
+  range: 1.2
+  colliderDistance: -1.2
+  damage: 30
+  boxCollider: {fileID: 2109139177966493357}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
