@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 9093095249224937503}
   - component: {fileID: 1570063996243504079}
   - component: {fileID: 2679851623039576747}
-  - component: {fileID: 8538311451581390878}
   - component: {fileID: 321372564894919312}
   m_Layer: 6
   m_Name: PlantEnemy
@@ -213,28 +212,6 @@ MonoBehaviour:
   health: 65
   currentHealth: 0
   painSound: {fileID: 8300000, guid: 81e0084bd364fa04ebd8e1a7de463d4c, type: 3}
---- !u!114 &8538311451581390878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5331303772006745133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b20491d760798d9468617a596a3656d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 2
-  range: 5
-  damage: 20
-  firepoint: {fileID: 0}
-  fireballs: []
-  colliderDistance: 0
-  boxCollider: {fileID: 0}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &321372564894919312
 MonoBehaviour:
   m_ObjectHideFlags: 0
