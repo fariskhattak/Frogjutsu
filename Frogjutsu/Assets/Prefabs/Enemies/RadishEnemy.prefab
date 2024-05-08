@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 522819743127070377}
   - component: {fileID: 4838004032421592244}
   - component: {fileID: 5928546444849498715}
+  - component: {fileID: 5882662250447674672}
   - component: {fileID: 5528143173194525971}
   - component: {fileID: 6343686702973500986}
   - component: {fileID: 1456654369686032953}
+  - component: {fileID: 1993629160273156859}
+  - component: {fileID: 7590872636424381059}
   m_Layer: 6
   m_Name: RadishEnemy
   m_TagString: Enemy
@@ -31,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.36, y: -1.32, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3239594328036583930, guid: 35ef1be83e02c504ea4bacdacf26b716, type: 3}
+  m_Sprite: {fileID: -6077868597088469121, guid: e532f9ec197d9fc46ae4249bf17976e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +136,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2516594, y: 1.6805537}
   m_EdgeRadius: 0
+--- !u!50 &5882662250447674672
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536602266067762043}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!95 &5528143173194525971
 Animator:
   serializedVersion: 5
@@ -181,3 +211,41 @@ MonoBehaviour:
   health: 50
   currentHealth: 0
   painSound: {fileID: 8300000, guid: 81e0084bd364fa04ebd8e1a7de463d4c, type: 3}
+--- !u!114 &1993629160273156859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536602266067762043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35107866a7d1e264a814accd8358f6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftEdge: {fileID: 0}
+  rightEdge: {fileID: 0}
+  enemy: {fileID: 522819743127070377}
+  speed: 1
+  idleDuration: 2
+  anim: {fileID: 5528143173194525971}
+--- !u!114 &7590872636424381059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536602266067762043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f848fa0fe46f284ca3e7be09448175a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1
+  range: 2
+  colliderDistance: -1
+  damage: 10
+  boxCollider: {fileID: 5928546444849498715}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
