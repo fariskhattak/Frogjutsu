@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2475693855663038532}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2983198313075785059}
   - component: {fileID: 2662697460687573931}
   - component: {fileID: 4720661944309039406}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Warrior Ninja
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -230,6 +230,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   dirX: 0
+  isSprinting: 0
 --- !u!114 &4720661944309039406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +252,7 @@ MonoBehaviour:
     damage: 10
     defense: 10
     jumpForce: 14
+    unlockedLevels: 1
   lifeCounter: 3
   lifeText: {fileID: 0}
   enemies:
@@ -258,8 +260,6 @@ MonoBehaviour:
     m_Bits: 64
   deathSound: {fileID: 8300000, guid: 7cefbfbc7be51b2409392049f4efd783, type: 3}
   jumpSound: {fileID: 8300000, guid: 7412e97a025333441a515f457cba6d8c, type: 3}
-  runSound: {fileID: 8300000, guid: e3175374a9cb1934d878ad09962b02b9, type: 3}
-  warriorJumpForce: 17
   attackPoint: {fileID: 2700484457330040754}
   attackRadius: 0.65
   attackSound: {fileID: 8300000, guid: 47fce77506efc2e4193a57b84f77e853, type: 3}

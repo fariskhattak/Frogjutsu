@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyFireballHolder : MonoBehaviour
+public class EnemyBulletHolder : MonoBehaviour
 {
     [SerializeField] private Transform enemy;
 

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3191607715601549615}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4339489127858861449}
   - component: {fileID: 8807949473090549966}
   - component: {fileID: -8869682282557621139}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mage Ninja
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -230,6 +230,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   dirX: 0
+  isSprinting: 0
 --- !u!114 &-8869682282557621139
 MonoBehaviour:
   m_ObjectHideFlags: 0
