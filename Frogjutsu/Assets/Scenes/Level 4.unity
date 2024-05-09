@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 173381357}
   - component: {fileID: 173381356}
   m_Layer: 5
-  m_Name: Border
+  m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,6 +519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1565179653577716148, guid: 194fcf90d71dfcb43896a035911b6dda, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 79730584}
     - target: {fileID: 1993629160273156859, guid: 194fcf90d71dfcb43896a035911b6dda, type: 3}
       propertyPath: leftEdge
       value: 
