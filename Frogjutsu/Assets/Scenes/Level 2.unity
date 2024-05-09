@@ -325,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 142422850}
   m_Layer: 0
-  m_Name: PointB_Mushroomm_1
+  m_Name: left_Mushroomm_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,6 +406,14 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 420590460}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 420590461}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 1678917871}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_3
@@ -1647,13 +1655,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 1207185220}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 747787368}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 371208318}
     - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 371208317}
@@ -1690,21 +1703,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &371208318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371208316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35107866a7d1e264a814accd8358f6aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 747787367}
-  pointB: {fileID: 1207185219}
-  speed: 2
 --- !u!1 &385878414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,7 +1713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 385878415}
   m_Layer: 0
-  m_Name: PointB_Radish_1
+  m_Name: left_Radish_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1812,7 +1810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420590461}
   m_Layer: 0
-  m_Name: PointB_Mushroomm_3
+  m_Name: left_Mushroomm_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2906,7 +2904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 747787368}
   m_Layer: 0
-  m_Name: PointA_Radish_3
+  m_Name: right_Radish_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11382,7 +11380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 788719737}
   m_Layer: 0
-  m_Name: PointA_Mushroomm_2
+  m_Name: right_Mushroomm_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11973,6 +11971,14 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1940003865}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 1940003866}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 788719737}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_2
@@ -12150,7 +12156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1001061579}
   m_Layer: 0
-  m_Name: PointA_Radish_1
+  m_Name: right_Radish_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12507,7 +12513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1161266180}
   m_Layer: 0
-  m_Name: PointB_Radish_2
+  m_Name: left_Radish_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12538,7 +12544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1167587068}
   m_Layer: 0
-  m_Name: PointA_Radish_2
+  m_Name: right_Radish_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12773,13 +12779,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 1236699410}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 1585633619}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1190312949}
     - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1190312948}
@@ -12816,21 +12827,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1190312949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190312947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35107866a7d1e264a814accd8358f6aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 1585633618}
-  pointB: {fileID: 1236699409}
-  speed: 2
 --- !u!1 &1199057657
 GameObject:
   m_ObjectHideFlags: 0
@@ -12925,7 +12921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1207185220}
   m_Layer: 0
-  m_Name: PointB_Radish_3
+  m_Name: left_Radish_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13114,7 +13110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1236699410}
   m_Layer: 0
-  m_Name: PointB_Radish_4
+  m_Name: left_Radish_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13229,7 +13225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351031641}
   m_Layer: 0
-  m_Name: PointA_Mushroomm_1
+  m_Name: right_Mushroomm_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13586,6 +13582,14 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 142422849}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 142422850}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 1351031641}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_1
@@ -14094,7 +14098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585633619}
   m_Layer: 0
-  m_Name: PointA_Radish_4
+  m_Name: right_Radish_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14270,7 +14274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1678917871}
   m_Layer: 0
-  m_Name: PointA_Mushroomm_3
+  m_Name: right_Mushroomm_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15814,7 +15818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1940003866}
   m_Layer: 0
-  m_Name: PointB_Mushroomm_2
+  m_Name: left_Mushroomm_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16115,13 +16119,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 1161266180}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 1167587068}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2081166112}
     - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2081166111}
@@ -16158,21 +16167,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &2081166112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081166110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35107866a7d1e264a814accd8358f6aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 1167587067}
-  pointB: {fileID: 1161266179}
-  speed: 2
 --- !u!1001 &2090005346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16453,13 +16447,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 385878415}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 1001061579}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2146164423}
     - targetCorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2146164430}
@@ -16469,21 +16468,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1536602266067762043, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
   m_PrefabInstance: {fileID: 2146164421}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2146164423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146164422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35107866a7d1e264a814accd8358f6aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 1001061578}
-  pointB: {fileID: 385878414}
-  speed: 2
 --- !u!50 &2146164430
 Rigidbody2D:
   serializedVersion: 4
@@ -16548,7 +16532,6 @@ SceneRoots:
   - {fileID: 1161266180}
   - {fileID: 2081166109}
   - {fileID: 747787368}
-  - {fileID: 1797041971}
   - {fileID: 1207185220}
   - {fileID: 371208315}
   - {fileID: 1236699410}
@@ -16558,4 +16541,5 @@ SceneRoots:
   - {fileID: 1737213250}
   - {fileID: 1743238408}
   - {fileID: 492714926}
+  - {fileID: 1797041971}
   - {fileID: 1619768408}

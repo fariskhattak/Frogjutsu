@@ -228,7 +228,7 @@ MonoBehaviour:
   range: 5
   damage: 20
   firepoint: {fileID: 6661720464367774687}
-  fireballs:
+  bullets:
   - {fileID: 7375020442296082561}
   - {fileID: 5882283792584388653}
   - {fileID: 7698280758837299151}

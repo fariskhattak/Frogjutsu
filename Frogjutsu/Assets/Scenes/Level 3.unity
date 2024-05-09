@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 137359828}
   m_Layer: 0
-  m_Name: PointA_Mushroomm_2
+  m_Name: right_Mushroomm_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 187199706}
   m_Layer: 0
-  m_Name: PointA_Radish_1
+  m_Name: right_Radish_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -309,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 193239084}
   m_Layer: 0
-  m_Name: PointA_Radish_2
+  m_Name: right_Radish_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,6 +390,14 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 646701427}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 646701428}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 468178016}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_1
@@ -454,7 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 468178016}
   m_Layer: 0
-  m_Name: PointA_Mushroomm_1
+  m_Name: right_Mushroomm_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,7 +555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 591372155}
   m_Layer: 0
-  m_Name: PointB_Radish_2
+  m_Name: left_Radish_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -697,7 +705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646701428}
   m_Layer: 0
-  m_Name: PointB_Mushroomm_1
+  m_Name: left_Mushroomm_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4406,6 +4414,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 2018125523}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 187199706}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4461,9 +4477,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35107866a7d1e264a814accd8358f6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {fileID: 187199705}
-  pointB: {fileID: 2018125522}
+  leftEdge: {fileID: 0}
+  rightEdge: {fileID: 0}
+  enemy: {fileID: 0}
   speed: 2
+  idleDuration: 0
+  anim: {fileID: 0}
 --- !u!1001 &1096493913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4520,6 +4539,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 591372155}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 193239084}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4575,9 +4602,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35107866a7d1e264a814accd8358f6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {fileID: 193239083}
-  pointB: {fileID: 591372154}
+  leftEdge: {fileID: 0}
+  rightEdge: {fileID: 0}
+  enemy: {fileID: 0}
   speed: 2
+  idleDuration: 0
+  anim: {fileID: 0}
 --- !u!1001 &1117830726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4753,6 +4783,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 1992134030}
+    - target: {fileID: 1993629160273156859, guid: 503dd5c777e7e27468a3852a7383fd38, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 2019858292}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4808,9 +4846,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35107866a7d1e264a814accd8358f6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {fileID: 2019858291}
-  pointB: {fileID: 1992134029}
+  leftEdge: {fileID: 0}
+  rightEdge: {fileID: 0}
+  enemy: {fileID: 0}
   speed: 2
+  idleDuration: 0
+  anim: {fileID: 0}
 --- !u!1 &1284609563
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,7 +4862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284609564}
   m_Layer: 0
-  m_Name: PointB_Mushroomm_3
+  m_Name: left_Mushroomm_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5094,7 +5135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1614193507}
   m_Layer: 0
-  m_Name: PointB_Mushroomm_2
+  m_Name: left_Mushroomm_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5299,6 +5340,14 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1614193506}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 1614193507}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 137359828}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_2
@@ -5461,7 +5510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1850142262}
   m_Layer: 0
-  m_Name: PointA_Mushroomm_3
+  m_Name: right_Mushroomm_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5708,7 +5757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992134030}
   m_Layer: 0
-  m_Name: PointB_Radish_3
+  m_Name: left_Radish_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5801,7 +5850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2018125523}
   m_Layer: 0
-  m_Name: PointB_Radish_1
+  m_Name: left_Radish_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5832,7 +5881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2019858292}
   m_Layer: 0
-  m_Name: PointA_Radish_3
+  m_Name: right_Radish_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5975,6 +6024,14 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1284609563}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 1284609564}
+    - target: {fileID: 3010466971827749187, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 1850142262}
     - target: {fileID: 6384936684931244026, guid: c56fce129c2861648ac04da63f4bfce8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy_3
