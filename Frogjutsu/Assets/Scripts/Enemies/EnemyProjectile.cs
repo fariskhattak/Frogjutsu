@@ -9,7 +9,7 @@ public class EnemyProjectile : Enemy
 
     void Start()
     {
-        damage = 20; //changed damage?
+        damage = 40; //changed damage?
     }
 
     
