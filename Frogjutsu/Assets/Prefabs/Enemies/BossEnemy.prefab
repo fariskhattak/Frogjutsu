@@ -123,18 +123,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.036616802, y: -0.266325}
+  m_Offset: {x: -0.22968632, y: 0.19415832}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84, y: 0.38}
+    pivot: {x: 0.74, y: 0.3}
+    oldSize: {x: 5.25, y: 2.375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2516594, y: 1.6805537}
+  m_Size: {x: 1.3848124, y: 1.7360334}
   m_EdgeRadius: 0
 --- !u!50 &5882662250447674672
 Rigidbody2D:
@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e0ec16738e3424f97136863f07ca7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
 --- !u!114 &1456654369686032953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,8 +227,8 @@ MonoBehaviour:
   leftEdge: {fileID: 0}
   rightEdge: {fileID: 0}
   enemy: {fileID: 522819743127070377}
-  speed: 1
-  idleDuration: 2
+  speed: 7
+  idleDuration: 0.75
   anim: {fileID: 5528143173194525971}
 --- !u!114 &7590872636424381059
 MonoBehaviour:
@@ -244,7 +245,7 @@ MonoBehaviour:
   attackCooldown: 1
   range: 2
   colliderDistance: -1
-  damage: 10
+  damage: 100
   boxCollider: {fileID: 5928546444849498715}
   playerLayer:
     serializedVersion: 2
