@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 [System.Serializable] // This makes it visible in the inspector
 public class Stats
@@ -12,6 +13,8 @@ public class Stats
     public float defense;
     public float jumpForce;
     public int unlockedLevels = 1;
+
+    public int score;
 
     public Stats()
     {
@@ -35,9 +38,10 @@ public class Stats
         this.defense = defense;
         this.jumpForce = jumpForce;
         unlockedLevels = 1;
+        score = 0;
     }
 
-    public Stats(int maxHealth, int maxMana, float moveSpeed, float damage, float defense, float jumpForce, int _unlockedLevels)
+    public Stats(int maxHealth, int maxMana, float moveSpeed, float damage, float defense, float jumpForce, int _unlockedLevels, int _score)
     {
         this.maxHealth = maxHealth;
         this.currentHealth = maxHealth; // Initialize current health to max by default
@@ -48,26 +52,27 @@ public class Stats
         this.defense = defense;
         this.jumpForce = jumpForce;
         unlockedLevels = _unlockedLevels;
+        score = _score;
     }
 
     public Stats BaseWarriorStats()
     {
-        return new Stats(120, 20, 7, 20, 10, 17, unlockedLevels);
+        return new Stats(120, 20, 7, 20, 10, 17, unlockedLevels, score);
     }
 
         public Stats BaseMageStats()
     {
-        return new Stats(70, 50, 5, 40, 7, 14, unlockedLevels);
+        return new Stats(70, 100, 5, 40, 7, 14, unlockedLevels, score);
     }
 
         public Stats BaseRangerStats()
     {
-        return new Stats(100, 30, 7, 20, 7, 14, unlockedLevels);
+        return new Stats(100, 30, 7, 20, 7, 14, unlockedLevels, score);
     }
 
         public Stats BaseAssassinStats()
     {
-        return new Stats(80, 40, 10, 15, 5, 14, unlockedLevels);
+        return new Stats(80, 40, 10, 15, 5, 14, unlockedLevels, score);
     }
 
     public void DeathReset()
@@ -111,5 +116,12 @@ public class Stats
         Debug.Log($"Defense: {defense}");
         Debug.Log($"Jump Force: {jumpForce}");
         Debug.Log($"Unlocked Levels: {unlockedLevels}");
+    }
+
+    public void IncreaseScore()
+    {
+        int scoreIncrease = Random.Range(100, 301); // Upper limit is exclusive in Random.Range
+        score += scoreIncrease;
+        Debug.Log("Score increased by " + scoreIncrease + ". Total score: " + score);
     }
 }

@@ -14,6 +14,7 @@ TagManager:
   - Life Counter
   - Level Sewer
   - Checkpoint
+  - Score Value
   layers:
   - Default
   - TransparentFX

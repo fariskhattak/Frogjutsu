@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -34,6 +35,36 @@ public class EnemyHealth : MonoBehaviour
 
     public void Death()
     {
+        // Deactivate the current game object
         gameObject.SetActive(false);
+        PlayerManager.Instance.playerStats.IncreaseScore();
+
+        if (SceneManager.GetActiveScene().name == "Level 4")
+        {
+            // Check if all BossEnemies are dead
+            BossEnemy[] bosses = FindObjectsOfType<BossEnemy>();
+            bool allBossesDead = true;
+
+            foreach (BossEnemy boss in bosses)
+            {
+                // If any boss is still active, set allBossesDead to false
+                if (boss.gameObject.activeSelf)
+                {
+                    allBossesDead = false;
+                    break;
+                }
+            }
+
+            // If all bosses are dead, load the victory screen
+            if (allBossesDead)
+            {
+                LoadVictoryScreen();
+            }
+        }
+    }
+
+    void LoadVictoryScreen()
+    {
+        SceneManager.LoadScene("Victory Scene");
     }
 }

@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     protected float knockbackForce = 15f;
     public int lifeCounter = 3;
     public TMP_Text lifeText;
+    public TMP_Text scoreText;
     protected bool isAlive;
 
     protected Rigidbody2D rb;
@@ -55,10 +56,13 @@ public class Player : MonoBehaviour
         assassinInvulnerability = false;
 
         InitLifeText();
+        InitScoreText();
     }
 
     public virtual void Update()
     {
+        if (scoreText != null)
+            scoreText.text = "" + playerStats.score;
         bool attacking = anim.GetBool("isAttacking");
         if (Input.GetButtonDown("Fire1") && !attacking)
         {
@@ -216,7 +220,7 @@ public class Player : MonoBehaviour
     {
         if (playerMovement.IsGrounded())
         {
-            if (this is Warrior || this is Assassin)
+            if (this is Warrior || this is Assassin || this is Mage)
             {
                 if (!specialAbilityActivated)
                 {
@@ -357,6 +361,27 @@ public class Player : MonoBehaviour
         else
         {
             Debug.LogError("An object with the tag 'LifeText' was not found in the scene.");
+        }
+    }
+
+    private void InitScoreText()
+    {
+        GameObject scoreTextObject = GameObject.FindGameObjectWithTag("Score Value");
+        if (scoreTextObject != null)
+        {
+            scoreText = scoreTextObject.GetComponent<TMP_Text>();
+            if (scoreText != null)
+            {
+                scoreText.text = "" + playerStats.score;
+            }
+            else
+            {
+                Debug.LogError("TMP_Text component not found on the object with tag 'Score Text'.");
+            }
+        }
+        else
+        {
+            Debug.LogError("An object with the tag 'Score Text' was not found in the scene.");
         }
     }
 
