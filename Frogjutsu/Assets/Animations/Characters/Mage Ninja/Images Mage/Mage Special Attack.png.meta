@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mage Special Attack_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 11
+        width: 28
+        height: 26
+      alignment: 9
+      pivot: {x: 0.4256, y: 0.6164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66e178d87ba4c843b8384d8185c41de
+      internalID: -599222215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 11
+        width: 38
+        height: 26
+      alignment: 9
+      pivot: {x: 0.3146664, y: 0.6158851}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5254065ff2fadd643be7c42d755f6839
+      internalID: 1806861142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 11
+        width: 43
+        height: 29
+      alignment: 9
+      pivot: {x: 0.276551, y: 0.55145377}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b177c9374e2aee444a67394a64859127
+      internalID: 431673049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_3
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 11
+        width: 42
+        height: 26
+      alignment: 9
+      pivot: {x: 0.28347707, y: 0.6139089}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d6ddb5458998748af24223c8336ff0
+      internalID: -1363093616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_4
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 11
+        width: 39
+        height: 26
+      alignment: 9
+      pivot: {x: 0.30314285, y: 0.61561704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a093e78536f69f44180e8a3d36417407
+      internalID: 204296735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_5
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 11
+        width: 38
+        height: 26
+      alignment: 9
+      pivot: {x: 0.3146664, y: 0.6164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23edd51025bfc014fbb9013da22dff93
+      internalID: -1394850511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_6
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 11
+        width: 38
+        height: 26
+      alignment: 9
+      pivot: {x: 0.3146664, y: 0.6164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53f0c9ca6cdd0746b496884c3ebee22
+      internalID: -1131624537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_7
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 11
+        width: 38
+        height: 26
+      alignment: 9
+      pivot: {x: 0.3146664, y: 0.6164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ebdd5b04f24414da20b6a9a946584c
+      internalID: -962627749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_8
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 11
+        width: 38
+        height: 26
+      alignment: 9
+      pivot: {x: 0.3146664, y: 0.6164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915ad12e3ce601147bdd68bb2178c0a7
+      internalID: 290434615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_9
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 11
+        width: 38
+        height: 26
+      alignment: 9
+      pivot: {x: 0.3146664, y: 0.6164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da64ae1c76d8594e87bf27d0aab83c7
+      internalID: 776964714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mage Special Attack_10
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 11
+        width: 28
+        height: 26
+      alignment: 9
+      pivot: {x: 0.4256, y: 0.6164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4734d80b5665444b3e58b17b583a01
+      internalID: -336354941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +337,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mage Special Attack_0: -599222215
+      Mage Special Attack_1: 1806861142
+      Mage Special Attack_10: -336354941
+      Mage Special Attack_2: 431673049
+      Mage Special Attack_3: -1363093616
+      Mage Special Attack_4: 204296735
+      Mage Special Attack_5: -1394850511
+      Mage Special Attack_6: -1131624537
+      Mage Special Attack_7: -962627749
+      Mage Special Attack_8: 290434615
+      Mage Special Attack_9: 776964714
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
