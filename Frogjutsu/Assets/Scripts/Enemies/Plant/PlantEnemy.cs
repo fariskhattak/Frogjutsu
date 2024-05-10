@@ -7,6 +7,6 @@ public class PlantEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        damage = 50;
+        damage = 30;
     }
 }
