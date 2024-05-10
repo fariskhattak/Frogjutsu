@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float dirX = 0f;
 
     private enum MovementState { idle, running, jumping, falling }
+    private enum SpecialMovementState {idle, running, jumping, falling}
     public bool isSprinting;
     // Start is called before the first frame update
     void Awake()
@@ -39,22 +40,24 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
-        if (Input.GetButtonDown("Fire2") && IsGrounded())
-        {
-            Debug.Log("Player started sprinting");
-            isSprinting = true;
-        }
-        if (Input.GetButtonUp("Fire2"))
-        {
-            Debug.Log("Player stopped sprinting");
-            isSprinting = false;
-        }
-        if (!IsGrounded())
-            isSprinting = false;
-        if (!isSprinting)
-            player.Run(dirX);
-        else
-            player.Sprint(dirX);
+        // if (Input.GetButtonDown("Fire2") && IsGrounded())
+        // {
+        //     Debug.Log("Player started sprinting");
+        //     isSprinting = true;
+        // }
+        // if (Input.GetButtonUp("Fire2"))
+        // {
+        //     Debug.Log("Player stopped sprinting");
+        //     isSprinting = false;
+        // }
+        // if (!IsGrounded())
+        //     isSprinting = false;
+        // if (!isSprinting)
+        //     player.Run(dirX);
+        // else
+        //     player.Sprint(dirX);
+
+        player.Run(dirX);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -68,34 +71,49 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationState()
     {
         MovementState state;
+        SpecialMovementState specialState;
         // Running right
         if (dirX > 0f)
         {
             state = MovementState.running;
+            specialState = SpecialMovementState.running;
             rb.transform.localScale = Vector3.one;
         }
         // Running left
         else if (dirX < 0f)
         {
             state = MovementState.running;
+            specialState = SpecialMovementState.running;
             rb.transform.localScale = new Vector3(-1, 1, 1);
         }
         // Stopped
         else
         {
             state = MovementState.idle;
+            specialState = SpecialMovementState.idle;
         }
 
         if (rb.velocity.y > .1f)
         {
             state = MovementState.jumping;
+            specialState = SpecialMovementState.jumping;
         }
         else if (rb.velocity.y < -.1f)
         {
             state = MovementState.falling;
+            specialState = SpecialMovementState.falling;
         }
 
-        anim.SetInteger("state", (int)state);
+        if (player is Warrior && player.specialAbilityActivated)
+        {
+            anim.SetInteger("special", (int)specialState);
+            anim.SetInteger("state", -1);
+        }
+        else
+        {
+            anim.SetInteger("state", (int)state);
+        }
+
     }
 
     public bool IsGrounded()

@@ -81,8 +81,10 @@ public class Stats
     public void TakeDamage(int damageAmount)
     {
         int damageAfterDefense = Mathf.Clamp(damageAmount - (int)defense, 1, int.MaxValue);
+        Debug.Log("Damage after defense:" + damageAfterDefense);
         currentHealth -= damageAfterDefense;
         currentHealth = Mathf.Max(currentHealth, 0);
+        Debug.Log("Player current health: " + currentHealth);
     }
 
     public void Heal(int healAmount)

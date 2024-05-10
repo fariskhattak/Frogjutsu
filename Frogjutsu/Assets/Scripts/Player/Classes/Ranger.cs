@@ -16,6 +16,8 @@ public class Ranger : Player
         playerStats = playerStats.BaseRangerStats();
         PlayerManager.Instance.playerStats = playerStats;
         InitArrows();
+        InitHealthBar();
+        InitManaBar();
     }
 
     public override void Update()

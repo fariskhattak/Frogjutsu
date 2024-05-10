@@ -7,19 +7,18 @@ public class Mage : Player
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject magicAmmoPrefab;
     [SerializeField] private int manaCostPerShot = 10; // Add the mana cost per shot
-    [SerializeField] private int manaRegenAmount = 1; // Mana to regenerate per tick
     private List<GameObject> magicAmmo = new List<GameObject>();
     [SerializeField] private int totalAmmo = 10;
     [SerializeField] private AudioClip attackSound;
     private float cooldownTimer;
-    [SerializeField] private float manaRegenCooldown = 0.5f; // Time interval between mana regen
-    private float manaRegenTimer;
 
     void Start()
     {
         playerStats = playerStats.BaseMageStats();
         PlayerManager.Instance.playerStats = playerStats;
         InitMagicAmmo();
+        InitHealthBar();
+        InitManaBar();
     }
 
     public override void Update()
@@ -30,16 +29,6 @@ public class Mage : Player
         }
 
         cooldownTimer += Time.deltaTime;
-
-        // Regenerate mana over time
-        manaRegenTimer += Time.deltaTime;
-        if (manaRegenTimer >= manaRegenCooldown)
-        {
-            playerStats.RestoreMana(manaRegenAmount);
-            manaBar.SetMana(playerStats.currentMana);
-            Debug.Log("Mage current mana: " + playerStats.currentMana);
-            manaRegenTimer = 0f;
-        }
     }
 
     public override void StartAttack()

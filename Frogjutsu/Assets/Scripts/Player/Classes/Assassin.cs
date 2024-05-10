@@ -11,6 +11,8 @@ public class Assassin : Player
     {
         playerStats = playerStats.BaseAssassinStats();
         PlayerManager.Instance.playerStats = playerStats;
+        InitHealthBar();
+        InitManaBar();
     }
 
     // Used for melee attacks

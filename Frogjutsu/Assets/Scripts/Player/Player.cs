@@ -21,12 +21,19 @@ public class Player : MonoBehaviour
     protected Animator anim;
     protected SpriteRenderer sprite;
     public LayerMask enemies;
-    private Vector3 startPosition;
-    private Quaternion startRotation;
+    private Quaternion respawnRotation;
     private Vector3 respawnPosition;
     protected PlayerMovement playerMovement;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip jumpSound;
+
+    [SerializeField] protected float manaRegenCooldown = 0.5f; // Time interval between mana regen
+    protected float manaRegenTimer;
+    [SerializeField] protected int manaRegenAmount = 1; // Mana to regenerate per tick
+
+    public bool specialAbilityActivated;
+    public float specialAbilityCooldown = 5f; // Cooldown time in seconds
+    private float lastSpecialAbilityTime = 0; // Time when special ability was last used
 
     void Awake()
     {
@@ -36,15 +43,14 @@ public class Player : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         playerMovement = GetComponent<PlayerMovement>();
 
-        startPosition = transform.position;
-        startRotation = transform.rotation;
+        respawnRotation = transform.rotation;
         respawnPosition = transform.position;
         isAlive = true;
 
         playerStats = PlayerManager.Instance.playerStats;
 
-        InitHealthBar();
-        InitManaBar();
+        specialAbilityActivated = false;
+
         InitLifeText();
     }
 
@@ -56,12 +62,49 @@ public class Player : MonoBehaviour
             Debug.Log("Player used attack button");
             StartAttack();
         }
+        if (Input.GetButtonDown("Fire2") && Time.time > lastSpecialAbilityTime + specialAbilityCooldown && playerStats.currentMana >= 20)
+        {
+            UseSpecialAbility();
+        }
+
+        anim.SetBool("usingSpecialAbility", specialAbilityActivated);
+
+        // Regenerate mana over time
+        manaRegenTimer += Time.deltaTime;
+        if (manaRegenTimer >= manaRegenCooldown)
+        {
+            playerStats.RestoreMana(manaRegenAmount);
+            manaBar.SetMana(playerStats.currentMana);
+            manaRegenTimer = 0f;
+        }
+    }
+
+    void UseSpecialAbility()
+    {
+        if (!specialAbilityActivated && playerStats.currentMana >= 20)
+        {
+            Debug.Log("Started special ability state");
+            specialAbilityActivated = true;
+            playerStats.currentMana -= 20; // Assuming the special ability costs 20 mana
+            manaBar.SetMana(playerStats.currentMana); // Update mana bar UI
+            anim.SetTrigger("useSpecial"); // Trigger the special ability animation
+            StartCoroutine(SpecialAbilityDuration(5)); // Special ability active for 5 seconds
+            lastSpecialAbilityTime = Time.time; // Update last used time
+        }
+    }
+
+    private IEnumerator SpecialAbilityDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Debug.Log("Removed special ability state");
+        specialAbilityActivated = false; // Reset the special ability state
     }
 
     public void TakeDamage(float damage)
     {
         if (isAlive)
         {
+            Debug.Log("Took damage: " + damage);
             SoundManager.instance.PlaySound(deathSound);
             anim.SetTrigger("hit");
             playerStats.TakeDamage(Mathf.RoundToInt(damage)); // Convert float to int
@@ -101,7 +144,7 @@ public class Player : MonoBehaviour
             Debug.Log("Resetting Player");
             anim.SetTrigger("respawn"); // Assuming you have a reset animation or logic
             transform.position = respawnPosition;
-            transform.rotation = startRotation;
+            transform.rotation = respawnRotation;
             healthBar.SetHealth(playerStats.maxHealth);
             manaBar.SetMana(playerStats.maxMana);
             isAlive = true;
@@ -132,7 +175,7 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(dirX * playerStats.moveSpeed * 2, rb.velocity.y);
     }
 
-        public void SetIceBlockSpeedBoosted(bool boosted)
+    public void SetIceBlockSpeedBoosted(bool boosted)
     {
         iceBlockSpeedBoosted = boosted;
     }
@@ -152,13 +195,24 @@ public class Player : MonoBehaviour
     public virtual void EndAttack()
     {
         anim.SetBool("isAttacking", false);
+        anim.SetBool("isSpecialAttacking", false);
     }
 
     public virtual void StartAttack()
     {
         if (playerMovement.IsGrounded())
         {
-            anim.SetBool("isAttacking", true);
+            if (!specialAbilityActivated)
+            {
+                anim.SetBool("isAttacking", true);
+                anim.SetBool("isSpecialAttacking", false);
+            }
+            else
+            {
+                anim.SetBool("isSpecialAttacking", true);
+                anim.SetBool("isAttacking", false);
+            }
+
         }
 
     }
@@ -220,7 +274,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void InitHealthBar()
+    protected void InitHealthBar()
     {
         GameObject healthBarObject = GameObject.FindGameObjectWithTag("HealthBar");
         if (healthBarObject != null)
@@ -242,7 +296,7 @@ public class Player : MonoBehaviour
             Debug.LogError("An object with the tag 'HealthBar' was not found in the scene.");
         }
     }
-    private void InitManaBar()
+    protected void InitManaBar()
     {
         GameObject manaBarObject = GameObject.FindGameObjectWithTag("ManaBar");
         if (manaBarObject != null)
