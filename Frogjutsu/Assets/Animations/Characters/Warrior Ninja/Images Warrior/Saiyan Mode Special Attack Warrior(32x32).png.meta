@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4872bd1108769a946a6acb68dc156fcf
+guid: 6b86fd25b27f775409d8099f336b4a42
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -63,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -85,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Saiyan Mode Special Attack Warrior(32x32)_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 16
+        width: 60
+        height: 55
+      alignment: 9
+      pivot: {x: 0.46883342, y: 0.29026607}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdd76e3853f1b041b0f98546e52a8e7
+      internalID: 370536925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saiyan Mode Special Attack Warrior(32x32)_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 16
+        width: 60
+        height: 55
+      alignment: 9
+      pivot: {x: 0.40122274, y: 0.29064724}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efca795518c9334c94326eae2998555
+      internalID: -576188247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Saiyan Mode Special Attack Warrior(32x32)_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1
+        width: 69
+        height: 70
+      alignment: 9
+      pivot: {x: 0.4208142, y: 0.4429469}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20da06ad14ac574cae5b143f14a38c6
+      internalID: 736524657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +169,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Saiyan Mode Special Attack Warrior(32x32)_0: 370536925
+      Saiyan Mode Special Attack Warrior(32x32)_1: -576188247
+      Saiyan Mode Special Attack Warrior(32x32)_2: 736524657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
