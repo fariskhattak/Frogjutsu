@@ -29,7 +29,7 @@ public class Warrior : Player
 
         if (specialAbilityActivated)
         {
-            playerStats.damage = 100;
+            playerStats.damage = 40;
             playerStats.moveSpeed = 14;
         }
         else

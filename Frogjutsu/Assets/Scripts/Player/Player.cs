@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     [SerializeField] protected int manaRegenAmount = 1; // Mana to regenerate per tick
 
     public bool specialAbilityActivated;
-    public float specialAbilityCooldown = 5f; // Cooldown time in seconds
+    public float specialAbilityCooldown = 15f; // Cooldown time in seconds
     private float lastSpecialAbilityTime = 0; // Time when special ability was last used
 
     void Awake()
@@ -87,7 +87,10 @@ public class Player : MonoBehaviour
             specialAbilityActivated = true;
             playerStats.currentMana -= 20; // Assuming the special ability costs 20 mana
             manaBar.SetMana(playerStats.currentMana); // Update mana bar UI
-            anim.SetTrigger("useSpecial"); // Trigger the special ability animation
+            if (this is Warrior)
+                anim.SetTrigger("useSpecial"); // Trigger the special ability animation
+            if (this is Ranger)
+                anim.SetFloat("shootingSpeed", 2); // shoots twice as fast
             StartCoroutine(SpecialAbilityDuration(5)); // Special ability active for 5 seconds
             lastSpecialAbilityTime = Time.time; // Update last used time
         }
@@ -98,6 +101,8 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(duration);
         Debug.Log("Removed special ability state");
         specialAbilityActivated = false; // Reset the special ability state
+        if (this is Ranger)
+            anim.SetFloat("shootingSpeed", 1);
     }
 
     public void TakeDamage(float damage)
@@ -202,16 +207,24 @@ public class Player : MonoBehaviour
     {
         if (playerMovement.IsGrounded())
         {
-            if (!specialAbilityActivated)
+            if (this is Warrior)
+            {
+                if (!specialAbilityActivated)
+                {
+                    anim.SetBool("isAttacking", true);
+                    anim.SetBool("isSpecialAttacking", false);
+                }
+                else
+                {
+                    anim.SetBool("isSpecialAttacking", true);
+                    anim.SetBool("isAttacking", false);
+                }
+            }
+            if (this is Ranger)
             {
                 anim.SetBool("isAttacking", true);
-                anim.SetBool("isSpecialAttacking", false);
             }
-            else
-            {
-                anim.SetBool("isSpecialAttacking", true);
-                anim.SetBool("isAttacking", false);
-            }
+
 
         }
 
