@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
             specialState = SpecialMovementState.falling;
         }
 
-        if (player is Warrior && player.specialAbilityActivated)
+        if ((player is Assassin || player is Warrior) && player.specialAbilityActivated)
         {
             anim.SetInteger("special", (int)specialState);
             anim.SetInteger("state", -1);

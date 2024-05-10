@@ -32,8 +32,10 @@ public class Player : MonoBehaviour
     [SerializeField] protected int manaRegenAmount = 1; // Mana to regenerate per tick
 
     public bool specialAbilityActivated;
-    public float specialAbilityCooldown = 15f; // Cooldown time in seconds
+    public float specialAbilityCooldown = 1f; // Cooldown time in seconds
     private float lastSpecialAbilityTime = 0; // Time when special ability was last used
+
+    public bool assassinInvulnerability;
 
     void Awake()
     {
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour
         playerStats = PlayerManager.Instance.playerStats;
 
         specialAbilityActivated = false;
+        assassinInvulnerability = false;
 
         InitLifeText();
     }
@@ -87,10 +90,12 @@ public class Player : MonoBehaviour
             specialAbilityActivated = true;
             playerStats.currentMana -= 20; // Assuming the special ability costs 20 mana
             manaBar.SetMana(playerStats.currentMana); // Update mana bar UI
-            if (this is Warrior)
+            if (this is Warrior || this is Assassin)
                 anim.SetTrigger("useSpecial"); // Trigger the special ability animation
             if (this is Ranger)
                 anim.SetFloat("shootingSpeed", 2); // shoots twice as fast
+            if (this is Assassin)
+                assassinInvulnerability = true;
             StartCoroutine(SpecialAbilityDuration(5)); // Special ability active for 5 seconds
             lastSpecialAbilityTime = Time.time; // Update last used time
         }
@@ -101,6 +106,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(duration);
         Debug.Log("Removed special ability state");
         specialAbilityActivated = false; // Reset the special ability state
+        assassinInvulnerability = false;
         if (this is Ranger)
             anim.SetFloat("shootingSpeed", 1);
     }
@@ -109,14 +115,17 @@ public class Player : MonoBehaviour
     {
         if (isAlive)
         {
-            Debug.Log("Took damage: " + damage);
-            SoundManager.instance.PlaySound(deathSound);
-            anim.SetTrigger("hit");
-            playerStats.TakeDamage(Mathf.RoundToInt(damage)); // Convert float to int
-            healthBar.SetHealth(playerStats.currentHealth);
-            if (playerStats.currentHealth <= 0)
+            if (!assassinInvulnerability)
             {
-                Die();
+                Debug.Log("Took damage: " + damage);
+                SoundManager.instance.PlaySound(deathSound);
+                anim.SetTrigger("hit");
+                playerStats.TakeDamage(Mathf.RoundToInt(damage)); // Convert float to int
+                healthBar.SetHealth(playerStats.currentHealth);
+                if (playerStats.currentHealth <= 0)
+                {
+                    Die();
+                }
             }
         }
     }
@@ -207,7 +216,7 @@ public class Player : MonoBehaviour
     {
         if (playerMovement.IsGrounded())
         {
-            if (this is Warrior)
+            if (this is Warrior || this is Assassin)
             {
                 if (!specialAbilityActivated)
                 {
