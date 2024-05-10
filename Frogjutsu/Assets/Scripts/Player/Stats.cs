@@ -62,7 +62,7 @@ public class Stats
 
         public Stats BaseMageStats()
     {
-        return new Stats(70, 100, 5, 40, 7, 14, unlockedLevels, score);
+        return new Stats(70, 100, 6, 40, 7, 14, unlockedLevels, score);
     }
 
         public Stats BaseRangerStats()
