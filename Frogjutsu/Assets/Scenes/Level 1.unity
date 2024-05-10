@@ -2654,7 +2654,6 @@ GameObject:
   - component: {fileID: 970725866}
   - component: {fileID: 970725865}
   - component: {fileID: 970725864}
-  - component: {fileID: 970725869}
   m_Layer: 6
   m_Name: Rockhead
   m_TagString: Enemy
@@ -2739,7 +2738,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 3.3125}
+    oldSize: {x: 0.42, y: 0.42}
     newSize: {x: 0.42, y: 0.42}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2823,27 +2822,6 @@ Transform:
   - {fileID: 1278605154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &970725869
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970725863}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c878af0f31fe53b48b32920d94196764, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &998375656
 GameObject:
   m_ObjectHideFlags: 0
